@@ -13,7 +13,7 @@
     "mean",
     "api"
   ],
-  "author": "Higor Diego",
+  "author": "Webschool",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.16.1",
