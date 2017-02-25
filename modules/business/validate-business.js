@@ -8,10 +8,10 @@ const ctrl = {
 			error ? res.json(error) :  next()	
 		},
 		change: (req,res,next)=>{
-			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalido!'})
+			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalid!'})
 		},
 		delete: (req,res,next)=>{
-			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalido!'})
+			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalid!'})
 		}
 	}
 

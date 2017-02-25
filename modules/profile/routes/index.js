@@ -9,7 +9,7 @@ module.exports =  (app) => {
   const listOne             = require( '../../../_organelles/organelle-findById');
   const update              = require( '../../../_organelles/organelle-update');
   const remove              = require( '../../../_organelles/organelle-remove');
-  const profileModel        = require( '../../../_moleculas/profile-model');
+  const profileModel        = require( '../../../_molecules/profile-model');
   const validate            = require('../validate-profile')
 
   const url                 = '/api/profile'

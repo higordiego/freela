@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const Profile  = require('../../_molecules/profile-model')
 const ctrl = {
 		make: (req,res,next)=>{
 			req.assert('firstName', 'valid firstName is required').notEmpty();
@@ -9,14 +9,22 @@ const ctrl = {
 			req.assert('email', 'valid email is required').isEmail();
 			req.assert('status', 'valid name is required').notEmpty();
 			req.assert('profile_id', 'valid profile_id is required').notEmpty();
+			mongoose.Types.ObjectId.isValid(req.body.profile_id) ?  next() : res.json({_id: 'Invalid!'});
+
 			const error = req.validationErrors();
-			error ? res.json(error) :  next()	
+			Profile.findById({_id: req.body.profile_id})
+			  .then((profile)=>{
+			  	!profile 
+			  			? res.json({profile_id: 'does not exist'}) 
+			  			: error ? res.json(error)  : next();
+			  })	
+			
 		},
 		change: (req,res,next)=>{
-			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalido!'})
+			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalid!'})
 		},
 		delete: (req,res,next)=>{
-			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalido!'})
+			mongoose.Types.ObjectId.isValid(req.params.id) ?  next() : res.json({_id: 'Invalid!'})
 		}
 	}
 

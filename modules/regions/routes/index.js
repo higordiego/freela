@@ -5,14 +5,14 @@ module.exports =  (app) => {
   const listOne       = require( '../../../_organelles/organelle-findById');
   const update        = require( '../../../_organelles/organelle-update');
   const remove        = require( '../../../_organelles/organelle-remove');
-  const regionsModel  = require( '../../../_moleculas/regions-model');
-  const validate      = require('../validate-regions')
+  const regionsModel  = require( '../../../_molecules/regions-model');
+  const validate      = require( '../validate-regions');
 
   const url           = '/api/regions'
   
   app.route(url)
-      .post(validate.make, create(regionsModel))
-      .get(list(regionsModel))
+     .post(validate.make, create(regionsModel))
+     .get(list(regionsModel))
 
   app.route(url +'/:id')
      .get(validate.change, listOne(regionsModel))

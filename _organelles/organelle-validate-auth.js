@@ -1,15 +1,15 @@
 module.exports = (app) => (req,res)=>{
 	const jwt  	=  require('jsonwebtoken')
 	const pass  =  require('../_quarks/password')
-	const Employee = require('../_moleculas/employee-model')
-	Employee.findOne({employeeName: req.body.username},{token: 0})
+	const Employee = require('../_molecules/employee-model')
+	Employee.findOne({userName: req.body.username},{token: 0})
 	.exec()
 	.then((employee)=>{
 		if (!employee) {
-			res.json({ success: false, message: 'Invalid employeeName' });
+			res.json({ success: false, message: 'Invalid username' });
 		} else if (employee) {
 			if(!pass.validate(employee.password, req.body.password)) {
-				res.json({ success: false, message: 'Invalid password' });
+				res.json({ success: false, message: 'Invalid username' });
 			} else {
 				var token = jwt.sign(employee, app.get('superSecret'), {
 					expiresIn : new Date().setHours(new Date().getHours() + 5)

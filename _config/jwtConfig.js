@@ -1,6 +1,6 @@
 module.exports = (express,app)=>{
   const jwt       = require('jsonwebtoken')
-  const Employee      = require('../_moleculas/employee-model')
+  const Employee      = require('../_molecules/employee-model')
   const apiRoutes = express.Router(); 
 
   apiRoutes.use((req, res, next)=> {

@@ -8,19 +8,21 @@ module.exports =  (app) => {
   const listEmployeeEmail = require('../../../_organelles/organelle-listEmployeeEmail')
   const validateUser      = require( '../../../_organelles/organelle-validate-auth');
   const removeEmployee    = require('../../../_organelles/organelle-removeEmployee')
-  const employeeModel     = require( '../../../_moleculas/employee-model');
+  const employeeModel     = require( '../../../_molecules/employee-model');
 
-  const validate      = require('../validate-employee')
+  const validate          = require('../validate-employee')
 
-  const url           = '/api/employee'
+  const url               = '/api/employee'
 
 /*
   Rota inicial
 */
   app.route('/')
      .get((req,res)=>res.json({msg: 'Bem vindo api Eyeson',version: '0.0.1'}))
+     
 
   // route login jwt
+  
   app.route('/employee/auth')
      .post(validateUser(app))
   

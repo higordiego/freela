@@ -5,4 +5,5 @@ module.exports = (app)=>{
 	require ('./modules/departments/routes/index')(app)
 	require ('./modules/profile/routes/index')(app)
 	require ('./modules/employee/routes/index')(app)
+	
 }

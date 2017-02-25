@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose   = require('mongoose')
 mongoose.Promise = require('bluebird')
 
 const MONGODB = {
   db: `eyeson`
 }
-const online = process.env.ONLINE || false
+const online = process.env.ONLINE || true
 // console.log('online', online)
 
 MONGODB.server =  online 
@@ -13,8 +13,6 @@ MONGODB.server =  online
 
 
 const url = `mongodb://${MONGODB.server}/${MONGODB.db}`
-// console.log('url', url)
-// console.log('MONGODB', MONGODB)
 
 
 mongoose.connect(url)
@@ -44,4 +42,7 @@ process.on('SIGINT', ()=>
 
 
 module.exports = mongoose
+
+
+//98836-8799
 
