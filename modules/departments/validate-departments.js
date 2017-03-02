@@ -1,6 +1,7 @@
 const mongoose 		= require('mongoose');
 const Stores   		= require('../../_molecules/stores-model')
 const Departments   = require('../../_molecules/departments-model')
+const Devices   = require('../../_molecules/devices-model')
 const ctrl =  {
 	make: (req,res,next)=>{
 
@@ -30,7 +31,7 @@ const ctrl =  {
 	dpDetails: (req,res,next)=>{
 		req.assert('departments_id', 'valid departments_id is required').notEmpty();
 		req.assert('EVMSCode', 'valid EVMSCode is required').notEmpty();
-		req.assert('deviceID', 'valide deviceID  is required').notEmpty();
+		req.assert('devices_id', 'valide deviceID  is required').notEmpty();
 		req.assert('register', 'valide register is required').notEmpty();
 		req.assert('employeeName', 'valide employeeName  is required').notEmpty();
 		req.assert('employeeNum', 'valide employeeNum  is required').notEmpty();
@@ -40,11 +41,16 @@ const ctrl =  {
 		const error = req.validationErrors();
 
 		Departments.findById({_id: req.body.departments_id})
-			  .then((stores)=>{
-			  		!stores 
-			  			? res.json({departments_id: 'does not exist'}) 
-			  			: error ? res.json(error)  : next();
-			  })	
+			.then((departments)=>{
+				!departments 
+					? res.json({departments_id: 'does not exist'})
+					: Devices.findById({_id: req.body.devices_id})
+						.then((devices)=>{
+							!devices 
+								? res.json({devices_id: 'does not exist'}) 	
+								: error ? res.json(error)  : next();		 	
+						});
+			});
 	}
 }
 module.exports = ctrl;
