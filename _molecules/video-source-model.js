@@ -4,24 +4,20 @@ const Schema   = mongoose.Schema;
 
 const name 					= require('../_atoms/string-required')
 const description 			= require('../_atoms/string-required')
-const company_id 			= require('../_atoms/object-ref')('Companys')
 const status 				= require('../_atoms/boolean-default-true')
 const created_at		    = require('../_atoms/date-default')
 const updated_at 		    = require('../_atoms/date-default')
 const deleted_at 		    = require('../_atoms/date-default')
 
-const Business = new Schema({
-	company_id,
+const Video = new Schema({
 	name,
-	description,
 	status,
 	created_at,
 	updated_at
 });
 
-Business.index({name: 1, status:1});
+Video.index({status:1});
 
-const molecule =  mongoose.model('Businesss', Business);
-
+const molecule =  mongoose.model('Videos', Video);
 
 module.exports = molecule
