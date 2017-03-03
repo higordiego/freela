@@ -10,4 +10,5 @@ module.exports = (app)=>{
 	require ('./modules/monitoring/routes/index')(app)
 	require ('./modules/devices/routes/index')(app)
 	require ('./modules/videos/routes/index')(app)
+	require ('./modules/alert/routes/index')(app)
 }

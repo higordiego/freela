@@ -6,9 +6,9 @@ module.exports =  (app) => {
   const update        = require( '../../../_organelles/organelle-update');
   const remove        = require( '../../../_organelles/organelle-remove');
   const videosModel   = require( '../../../_molecules/videos-source-model');
-  const validate      = require( '../validate-devices')
+  const validate      = require( '../validate-videos')
 
-  const url           = '/api/videos'
+  const url           = '/api/video'
   
   app.route(url)
     .post(validate.make, create(videosModel))
