@@ -1,0 +1,354 @@
+<!-- START TOP MENU -->
+<div class="navbar navbar-inverse bg-grey-600" ng-init="detailsUser()" >
+	<div class="navbar-header">
+		<a class="navbar-brand" href="index.html"><img src="assets/images/logo_light.png" alt=""></a>
+		<ul class="nav navbar-nav pull-right visible-xs-block">
+			<li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
+		</ul>
+	</div>
+	<div class="navbar-collapse collapse" id="navbar-mobile">
+		<ul class="nav navbar-nav navbar-right">
+
+			<li class="dropdown language-switch">
+				<a class="dropdown-toggle" data-toggle="dropdown">
+					<img src="assets/images/flags/us.png" class="position-left" alt="">
+					English
+					<span class="caret"></span>
+				</a>
+
+				<ul class="dropdown-menu">
+					<li><a class="portuguese"><img src="assets/images/flags/br.png" alt=""> Portuguese</a></li>
+					<li><a class="deutsch"><img src="assets/images/flags/de.png" alt=""> Deutsch</a></li>
+					<li><a class="ukrainian"><img src="assets/images/flags/ua.png" alt=""> Українська</a></li>
+					<li><a class="english"><img src="assets/images/flags/us.png" alt=""> English</a></li>
+					<li><a class="espana"><img src="assets/images/flags/es.png" alt=""> España</a></li>
+					<li><a class="russian"><img src="assets/images/flags/ru.png" alt=""> Русский</a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown">
+					<i class="icon-bubbles4"></i>
+					<span class="visible-xs-inline-block position-right">Messages</span>
+					<span class="badge bg-warning-400">2</span>
+				</a>
+
+				<div class="dropdown-menu dropdown-content width-350">
+					<div class="dropdown-content-heading">
+						Messages
+						<ul class="icons-list">
+							<li><a href="#"><i class="icon-compose"></i></a></li>
+						</ul>
+					</div>
+
+					<ul class="media-list dropdown-content-body">
+						<li class="media">
+							<div class="media-left">
+								<img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+								<span class="badge bg-danger-400 media-badge">5</span>
+							</div>
+
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">James Alexander</span>
+									<span class="media-annotation pull-right">04:58</span>
+								</a>
+
+								<span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left">
+								<img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+								<span class="badge bg-danger-400 media-badge">4</span>
+							</div>
+
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Margo Baker</span>
+									<span class="media-annotation pull-right">12:16</span>
+								</a>
+
+								<span class="text-muted">That was something he was unable to do because...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></div>
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Jeremy Victorino</span>
+									<span class="media-annotation pull-right">22:48</span>
+								</a>
+
+								<span class="text-muted">But that would be extremely strained and suspicious...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></div>
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Beatrix Diaz</span>
+									<span class="media-annotation pull-right">Tue</span>
+								</a>
+
+								<span class="text-muted">What a strenuous career it is that I've chosen...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></div>
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold"></span>
+									<span class="media-annotation pull-right">Mon</span>
+								</a>
+
+								<span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+							</div>
+						</li>
+					</ul>
+
+					<div class="dropdown-content-footer">
+						<a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+					</div>
+				</div>
+			</li>
+
+			<li class="dropdown">
+				<a  class="dropdown-toggle" data-toggle="dropdown">
+					<i class="fa fa-search"></i>
+					<span class="visible-xs-inline-block position-right">Messages</span>
+					<span class="badge bg-warning-400">2</span>
+				</a>
+
+				<div class="dropdown-menu dropdown-content width-350">
+					<div class="dropdown-content-heading">
+						Messages
+						<ul class="icons-list">
+							<li><a href="#"><i class="icon-compose"></i></a></li>
+						</ul>
+					</div>
+
+					<ul class="media-list dropdown-content-body">
+						<li class="media">
+							<div class="media-left">
+								<img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+								<span class="badge bg-danger-400 media-badge">5</span>
+							</div>
+
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">James Alexander</span>
+									<span class="media-annotation pull-right">04:58</span>
+								</a>
+
+								<span class="text-muted">who knows, maybe that would be the best thing for me...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left">
+								<img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt="">
+								<span class="badge bg-danger-400 media-badge">4</span>
+							</div>
+
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Margo Baker</span>
+									<span class="media-annotation pull-right">12:16</span>
+								</a>
+
+								<span class="text-muted">That was something he was unable to do because...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></div>
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Jeremy Victorino</span>
+									<span class="media-annotation pull-right">22:48</span>
+								</a>
+
+								<span class="text-muted">But that would be extremely strained and suspicious...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></div>
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Beatrix Diaz</span>
+									<span class="media-annotation pull-right">Tue</span>
+								</a>
+
+								<span class="text-muted">What a strenuous career it is that I've chosen...</span>
+							</div>
+						</li>
+
+						<li class="media">
+							<div class="media-left"><img src="assets/images/placeholder.jpg" class="img-circle img-sm" alt=""></div>
+							<div class="media-body">
+								<a href="#" class="media-heading">
+									<span class="text-semibold">Richard Vango</span>
+									<span class="media-annotation pull-right">Mon</span>
+								</a>
+
+								<span class="text-muted">Other travelling salesmen live a life of luxury...</span>
+							</div>
+						</li>
+					</ul>
+
+					<div class="dropdown-content-footer">
+						<a href="#" data-popup="tooltip" title="All messages"><i class="icon-menu display-block"></i></a>
+					</div>
+				</div>
+			</li>
+
+			<li class="dropdown dropdown-user">
+				<a class="dropdown-toggle" data-toggle="dropdown">
+					<img src="assets/images/placeholder.jpg">
+					<span>{{user.firstName + " " + user.lastName}}</span>
+					<i class="caret"></i>
+				</a>
+
+				<ul class="dropdown-menu dropdown-menu-right">
+					<li><a href="#!/painel/profile"><i class="icon-user-plus"></i> My profile</a></li>
+					<li><a href="#"><span class="badge badge-warning pull-right">58</span> <i class="icon-comment-discussion"></i> Alerts</a></li>
+					<li class="divider"></li>
+					<li><a href="#"><i class="icon-cog5"></i> Account settings</a></li>
+					<li><a href="#"><i class="icon-switch2"></i> Logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="navbar navbar-default" id="navbar-second">
+	<ul class="nav navbar-nav no-border visible-xs-block">
+		<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-second-toggle"><i class="icon-menu7"></i></a></li>
+	</ul>
+	<div class="navbar-collapse collapse" id="navbar-second-toggle">
+		<ul class="nav navbar-nav">
+			<li><a href="#!/painel" ><i class="icon-display4 position-left"></i> Dashboard</a></li>
+			<li class="dropdown mega-menu mega-menu-wide">
+				<a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-statistics position-left"></i> My Reports <span class="caret"></span></a>
+
+				<div class="dropdown-menu dropdown-content">
+					<div class="dropdown-content-body">
+						<div class="row">
+							<div class="col-md-3">
+								<span class="menu-heading underlined">Traffic Reports</span>
+								<ul class="menu-list">
+									<li>
+										<a href="report_conversion.php"><i class="icon-pencil3"></i> Conversion Rate</a>
+
+									</li>
+									<li>
+										<a href="#"><i class="icon-pie-chart"></i> Visit Duration</a>
+
+									</li>
+									<li>
+										<a href="#"><i class="icon-stats-bars"></i> Hourly Traffic</a>
+
+									</li>
+									<li>
+										<a href="#"><i class="icon-stats-bars2"></i> Show Average traffic</a>
+
+									</li>
+
+
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<span class="menu-heading underlined">Financial Report</span>
+								<ul class="menu-list">
+									<li>
+										<a href="report_revenue.php"><i class="icon-grid"></i> Revenue Analysis</a>
+
+									</li>
+									<li>
+										<a href="report_employee_performance.php"><i class="icon-pie-chart2"></i> Employee Performance</a>
+
+									</li>
+									<li>
+										<a href="#"><i class="icon-droplets"></i> KPIs Data Mining</a>
+
+									</li>
+
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<span class="menu-heading underlined"> Notification Report</span>
+								<ul class="menu-list">
+									<li>
+										<a href="#"><i class="icon-puzzle4"></i> LP Executive Summary</a>
+
+									</li>
+									<li>
+										<a href="#"><i class="icon-popout"></i> Executive Summary</a>
+
+									</li>
+
+								</ul>
+							</div>
+							<div class="col-md-3">
+								<span class="menu-heading underlined">Process Report</span>
+								<ul class="menu-list">
+									<li>
+										<a href="#"><i class="icon-make-group"></i> Time of Service Analysis</a>
+
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li class="dropdown mega-menu mega-menu-wide"><li>
+				<a href="myalerts.php"><i class="fa fa-envelope position-left"></i></span>My Alerts </a>
+			</li>
+			<li>
+				<a href="investigation.php">	
+					<i class="fa fa-search position-left"></i> My Investigations </a>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li>
+					<a href="#">
+						<i class="icon-history position-left"></i>
+						Enterprise
+						<span class="label label-inline position-right bg-blue-400">3.2.6</span>
+					</a>
+				</li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown">
+						<i class="icon-cog3"></i>
+						<span class="visible-xs-inline-block position-right">Share</span>
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu dropdown-menu-right">
+						<li><a href="#!/painel/company"><i class="fa fa-building" aria-hidden="true"></i> Company</a></li>
+
+						<li><a href="#!/painel/business"><i class="fa fa-briefcase" aria-hidden="true"></i>Business Group</a></li>
+						<li><a href="#!/painel/regions"><i class="fa fa-map" aria-hidden="true"></i> Region</a></li>
+						<li><a href="#!/painel/stores"><i class="icon-office" aria-hidden="true"></i> Store</a></li>
+						<li><a href="#!/painel/departments"><i class="fa fa-bookmark" aria-hidden="true"></i> Department</a></li>
+						<li><a href="#"><i class="fa fa-male" aria-hidden="true"></i> Staff</a></li>
+						<li class="divider"></li>
+						<li><a href="#"><i class="fa fa-users" aria-hidden="true"></i> User Management</a></li>
+						<li><a href="#"><i class="fa fa-television" aria-hidden="true"></i> Monitoring System</a></li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+</div>
+</div>
+<div ui-view>  </div>
+
+
+</div>

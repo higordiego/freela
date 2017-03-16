@@ -1,0 +1,33 @@
+{
+  "name": "client",
+  "description": "Client eyerson freela",
+  "main": "app.js",
+  "authors": [
+    "Higor Diego"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "front",
+    "mongodb",
+    "nodejs",
+    "angular",
+    "html5"
+  ],
+  "homepage": "https://github.com/higordiego/freela",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "library",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
+    "angular-route": "^1.6.3",
+    "ngstorage": "^0.3.11",
+    "angular-flash-alert": "^2.4.0"
+  }
+}
