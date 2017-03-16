@@ -5,7 +5,10 @@ module.exports =  (app) => {
   const listOne           = require( '../../../_organelles/organelle-findById');
   const update            = require( '../../../_organelles/organelle-update');
   const remove            = require( '../../../_organelles/organelle-remove');
-  const listEmployeeEmail = require('../../../_organelles/organelle-listEmployeeEmail')
+  const listEmployeeEmail = require('../../../_organelles/organelle-listEmployeeToken')
+  const forgot            = require('../../../_organelles/organelle-forgot')
+  const passwordUpdate    = require('../../../_organelles/organelle-forgot-update')
+  const validateForgot    = require('../../../_organelles/organelle-forgot-validate')
   const validateUser      = require( '../../../_organelles/organelle-validate-auth');
   const removeEmployee    = require('../../../_organelles/organelle-removeEmployee')
   const employeeModel     = require( '../../../_molecules/employee-model');
@@ -16,25 +19,36 @@ module.exports =  (app) => {
 
 /*
   Rota inicial
-*/
+  */
   app.route('/')
-     .get((req,res)=>res.json({msg: 'Bem vindo api Eyeson',version: '0.0.1'}))
-     
+  .get((req,res)=>res.json({msg: 'Bem vindo api Eyeson',version: '0.0.1'}))
+
 
   // route login jwt
   
-  app.route('/employee/auth')
-     .post(validateUser(app))
   
+  app.route('/')
+  .post(validateUser(app))
+
+  app.route('/forgot/:email')
+     .get(forgot(employeeModel))
+
+  app.route('/forgot/validate/:forgot')
+     .get(validateForgot(employeeModel))
+
+  app.route('/forgot/password')
+     .post(passwordUpdate(employeeModel))
+
+
   app.route(url)
-    .post(validate.make, create(employeeModel))
-    .get(list(employeeModel))
+      .post(validate.make, create(employeeModel))
+      .get(list(employeeModel))
 
   app.route(url + '/:username/:password/:email')
-     .delete(removeEmployee(employeeModel))
+  .delete(removeEmployee(employeeModel))
 
-  app.route(url + '/details/:username')
-     .get(listEmployeeEmail(employeeModel))
+  app.route(url + '/details/token')
+     .post(listEmployeeEmail(employeeModel))
 
   app.route(url +'/:id')
       .get(validate.change, listOne(employeeModel))

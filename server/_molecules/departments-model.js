@@ -8,11 +8,10 @@ const description 			= require ('../_atoms/string-required')
 const flag 					= require ('../_atoms/boolean-default-true')
 const stores_id   			= require ('../_atoms/object-ref')('Stores')
 const device_id   			= require ('../_atoms/object-ref')('Devices')
+const employee_id   		= require ('../_atoms/object-ref')('Employees')
 const EVMSCode				= require ('../_atoms/string')
 const code 					= require ('../_atoms/string-required')
 const register				= require ('../_atoms/string')
-const employeeName			= require ('../_atoms/string')
-const employeeNum			= require ('../_atoms/number')
 const created_at		    = require ('../_atoms/date-default')
 const updated_at 		    = require ('../_atoms/date-default')
 
@@ -24,8 +23,7 @@ const Departments = new Schema({
 	EVMSCode,
 	device_id,
 	register,
-	employeeName,
-	employeeNum,
+	employee_id,
 	created_at,
 	updated_at
 });

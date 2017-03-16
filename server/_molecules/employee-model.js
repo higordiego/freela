@@ -4,6 +4,7 @@ const Schema   = mongoose.Schema;
 
 const firstName 			= require ('../_atoms/string-required')
 const lastName 				= require ('../_atoms/string-required')
+const forgot 				= require ('../_atoms/string')
 const userName 				= require ('../_atoms/string-required-unique')
 const password 				=  require('../_atoms/string-password-crypt')
 const email 				= require('../_atoms/string-required-unique')
@@ -26,6 +27,8 @@ const Employee = new Schema({
 	userName,
 	password,
 	email,
+	token,
+	forgot,
 	startDate,
 	endDate,
 	status,
@@ -38,7 +41,7 @@ const Employee = new Schema({
 	updated_at
 });
 
-Employee.index({userName: 1,email:1,token:1});
+Employee.index({userName: 1,email:1});
 
 const molecule =  mongoose.model('Employees', Employee);
 

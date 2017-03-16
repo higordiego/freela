@@ -8,14 +8,14 @@ module.exports = (express,app)=>{
     if (token) {
      try {
       const decoded = jwt.decode(token, app.get('superSecret'));
-      if (decoded.exp <= Date.now()) {
-
+      if (decoded.exp <= Date.now() &&  req.employee) {
         res.status(400).json({error: 'Access Expired, please sign in again'});
       }
+
       Employee.findOne({token: decoded.token }, function(err, Employee) {
         if(err)
           res.status(500).json({message: "Error fetching token Employee."})
-        req.Employee = Employee;
+        req.employee = Employee;
         return next();
       });
 
