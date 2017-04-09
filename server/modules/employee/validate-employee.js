@@ -10,7 +10,9 @@ const ctrl = {
 			req.assert('email', 'valid email is required').isEmail();
 			req.assert('status', 'valid status is required').notEmpty();
 			req.assert('profile_id', 'valid profile_id is required').notEmpty();
-			mongoose.Types.ObjectId.isValid(req.body.profile_id) ?  next() : res.json({_id: 'Invalid!'});
+			
+			mongoose.Types.ObjectId.isValid(req.body.profile_id) ?  next() : res.json({profile_id: 'Invalid!'});
+
 			const error = req.validationErrors();
 			Profile.findById({_id: req.body.profile_id})
 			  .then((profile)=>{
@@ -18,6 +20,7 @@ const ctrl = {
 			  			? res.json({profile_id: 'does not exist'}) 
 			  			: error ? res.json(error)  : next();
 			  })	
+			
 		},
 
 		change: (req,res,next)=>{

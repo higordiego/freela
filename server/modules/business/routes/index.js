@@ -1,7 +1,7 @@
 module.exports =  (app) => {
 
   const create        = require( '../../../_organelles/organelle-create');
-  const list          = require( '../../../_organelles/organelle-find');
+  const populate      = require( '../../../_organelles/organelle-find-populate-one');
   const listOne       = require( '../../../_organelles/organelle-findById');
   const update        = require( '../../../_organelles/organelle-update');
   const remove        = require( '../../../_organelles/organelle-remove');
@@ -11,8 +11,8 @@ module.exports =  (app) => {
   const url           = '/api/business'
   
   app.route(url)
-    .post(validate.make, create(businessModel))
-    .get(list(businessModel))
+     .post(validate.make, create(businessModel))
+     .get(populate(businessModel)('company_id'))
 
   app.route(url +'/:id')
     .get(validate.change, listOne(businessModel))

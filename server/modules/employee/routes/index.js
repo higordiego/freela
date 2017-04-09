@@ -24,11 +24,13 @@ module.exports =  (app) => {
   .get((req,res)=>res.json({msg: 'Bem vindo api Eyeson',version: '0.0.1'}))
 
 
-  // route login jwt
-  
+  // route login jwt  
   
   app.route('/')
   .post(validateUser(app))
+
+  // app.route('/employee')
+  //    .post(create(employeeModel))
 
   app.route('/forgot/:email')
      .get(forgot(employeeModel))

@@ -9,9 +9,6 @@ const ctrl = {
 		req.assert('business_id', 'valid business_id is required').notEmpty()
 		req.assert('regions_id', 'valid regions_id is required').notEmpty()
 
-		mongoose.Types.ObjectId.isValid(req.body.business_id) ?  next() : res.json({business_id: 'Invalid!'})
-		mongoose.Types.ObjectId.isValid(req.body.regions_id) ?  next() : res.json({regions_id: 'Invalid!'})
-
 		const error = req.validationErrors();
 
 		Business.findById({_id: req.body.business_id})

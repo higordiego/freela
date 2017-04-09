@@ -32,7 +32,6 @@ const Employee = new Schema({
 	startDate,
 	endDate,
 	status,
-	profile_id,
 	stores_id,
 	business_id,
 	regions_id,

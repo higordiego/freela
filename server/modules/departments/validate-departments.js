@@ -7,11 +7,10 @@ const ctrl =  {
 
 		req.assert('description', 'valid description is required').notEmpty();
 		req.assert('name', 'valid name is required').notEmpty();
-		req.assert('code', 'valid flag is required').notEmpty();
 		req.assert('flag', 'flag  is required').notEmpty();
 		req.assert('stores_id', 'valid stores_id is required').notEmpty();
 
-		mongoose.Types.ObjectId.isValid(req.body.stores_id) ?  next() : res.json({stores_id: 'Invalid!'});
+		
 
 		const error = req.validationErrors();
 
@@ -36,8 +35,6 @@ const ctrl =  {
 		req.assert('employeeName', 'valide employeeName  is required').notEmpty();
 		req.assert('employeeNum', 'valide employeeNum  is required').notEmpty();
 		
-		mongoose.Types.ObjectId.isValid(req.body.departments_id) ?  next() : res.json({departments_id: 'Invalid!'});
-
 		const error = req.validationErrors();
 
 		Departments.findById({_id: req.body.departments_id})

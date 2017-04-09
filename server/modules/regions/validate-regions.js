@@ -7,8 +7,6 @@ const ctrl = {
 			req.assert('name', 'valid name is required').notEmpty();
 			req.assert('business_id', 'valid business_id is required').notEmpty();
 			
-			mongoose.Types.ObjectId.isValid(req.body.business_id) ?  next() : res.json({business_id: 'Invalid!'})
-			
 			const error = req.validationErrors();
 			
 			Business.findById({_id: req.body.business_id})

@@ -1,7 +1,7 @@
 module.exports =  (app) => {
 
   const create        = require( '../../../_organelles/organelle-create');
-  const list          = require( '../../../_organelles/organelle-find');
+  const populate      = require( '../../../_organelles/organelle-find-populate-two');
   const listOne       = require( '../../../_organelles/organelle-findById');
   const update        = require( '../../../_organelles/organelle-update');
   const remove        = require( '../../../_organelles/organelle-remove');
@@ -18,10 +18,9 @@ app.route(url +'/:id')
   
   app.route(url)
       .post(validate.make, create(storesModel))
-      .get(list(storesModel))
+      .get(populate(storesModel)('business_id')('regions_id'))
 
   
  }
 
 
- // stores -> 58adc186fe298c850c7c830d

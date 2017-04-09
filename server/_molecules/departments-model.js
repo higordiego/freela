@@ -2,13 +2,11 @@ const mongoose =  require('mongoose');
 const Schema   = mongoose.Schema;
 
 const Store 				= require ('../_molecules/stores-model')
-
 const name 					= require ('../_atoms/string-required')
 const description 			= require ('../_atoms/string-required')
 const flag 					= require ('../_atoms/boolean-default-true')
 const stores_id   			= require ('../_atoms/object-ref')('Stores')
-const device_id   			= require ('../_atoms/object-ref')('Devices')
-const employee_id   		= require ('../_atoms/object-ref')('Employees')
+const devices_id   			= require ('../_atoms/object-ref')('Devices')
 const EVMSCode				= require ('../_atoms/string')
 const code 					= require ('../_atoms/string-required')
 const register				= require ('../_atoms/string')
@@ -21,9 +19,8 @@ const Departments = new Schema({
 	flag,
 	description,
 	EVMSCode,
-	device_id,
+	devices_id,
 	register,
-	employee_id,
 	created_at,
 	updated_at
 });

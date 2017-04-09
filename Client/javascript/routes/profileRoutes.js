@@ -8,6 +8,12 @@
             controller: 'ProfileCtrl',
             authorize: true
         })
+        .state("painel.list", {
+            url: '/profile/list',
+            templateUrl : "../paginas/painel/profile/listIndex.html",
+            controller: 'ProfileCtrl',
+            authorize: true
+        })
         $urlRouterProvider
         .otherwise('/');
     }]);
