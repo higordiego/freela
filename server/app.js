@@ -9,7 +9,6 @@ const validator      = require ('express-validator')
 const mongo 		 = require ('./_config/mongoDB')
 
 const app = express();
-
 const jwt = require('./_config/jwtConfig')(express,app);
 
 
@@ -21,6 +20,8 @@ app.use(bodyParser.json());
 app.use(morgan('dev'));
 app.use(validator());
 app.use(cors());
+
+
 
 
 app.use('/api', jwt);

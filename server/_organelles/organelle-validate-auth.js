@@ -3,7 +3,7 @@ module.exports = (app) => (req,res)=>{
 	const pass  =  require('../_quarks/password')
 	const Employee = require('../_molecules/employee-model')
 	
-	Employee.findOne({userName: req.body.username},{token: 0})
+	Employee.findOne({userName: req.body.username})
 	.exec()
 	.then((employee)=>{
 		if (!employee) {
@@ -12,8 +12,8 @@ module.exports = (app) => (req,res)=>{
 			if(!pass.validate(employee.password, req.body.password)) {
 				res.json({ success: false, message: 'Invalid Username or Password' });
 			} else {
-				var token = jwt.sign(employee, app.get('superSecret'), {
-					expiresIn : new Date().setHours(new Date().getHours() + 5)
+				var token = jwt.sign(employee._id, app.get('superSecret'), {
+					expiresIn : 60*20
 				});	
 				Employee.update({_id: employee._id},{$set:{token: token}}).then((us)=>{
 					res.json({
