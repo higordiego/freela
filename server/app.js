@@ -25,7 +25,7 @@ app.use(cors());
 
 app.use('/api', jwt);
 
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 3001));
 
 const port   = app.get('port');
 const server = http.createServer(app);

@@ -8,7 +8,7 @@
 			$scope.preBusiness = {};
 
 			$scope.close = function(){
-				$scope.title = "Form Create Business "
+				$scope.title = "Add Business Group"
 				$scope.class = "btn btn-primary"
 				$scope.type = 'Save'
 				delete $scope.business

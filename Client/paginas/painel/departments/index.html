@@ -24,62 +24,62 @@
 							<th>EVMSCode </th>
 							<th> Flag </th>
 							<th class="text-center">Action</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="(key, depart) in departments">
-							<td>
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" value="">
-									</label>
-								</div>
-							</td>
-							<td> {{depart.name}} </td>
-							<td> {{depart.stores_id.name}} </td>
-							<td> {{depart.devices_id.name}} </td>
-							<td> {{depart.description}} </td>
-							<td> {{depart.register}} </td>
-							<td> {{depart.EVMSCode}} </td>
-							<td> {{depart.flag ? 'Active': 'Disable'}} </td>
-							<td class="text-center">
-								<a type="button" data-toggle="modal" data-target="#myModal"
-								ng-click="preUpdate(depart)"
-								class="btn btn-info btn-xs">
-								<i class="fa fa-pencil" aria-hidden="true"></i>
+							</
+						</thead>
+						<tbody>
+							<tr ng-repeat="(key, depart) in departments">
+								<td>
+									<div class="radio">
+										<label>
+											<input type="radio" ng-model="department._id"
+											 ng-change="listOneDepartment(department)" >
+										</label>
+									</div>
+								</td>
+								<td> {{depart.name}} </td>
+								<td> {{depart.stores_id.name}} </td>
+								<td> {{depart.description}} </td>
+								<td> {{depart.register}} </td>
+								<td> {{depart.EVMSCode}} </td>
+								<td> {{depart.flag ? 'Active': 'Disable'}} </td>
+								<td class="text-center">
+									<a type="button" data-toggle="modal" data-target="#myModal"
+									ng-click="preUpdate(depart)"
+									class="btn btn-info btn-xs">
+									<i class="fa fa-pencil" aria-hidden="true"></i>
+								</a>
+								<a class="btn btn-danger btn-xs" ng-click="preDelete(depart)"
+								data-toggle="modal" data-target="#myModal2">
+								<i class="fa fa-trash" aria-hidden="true" >
+								</i>
 							</a>
-							<a class="btn btn-danger btn-xs" ng-click="preDelete(depart)"
-							data-toggle="modal" data-target="#myModal2">
+
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="modal fade" id="myModal2" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Remove Departments</h4>
+					</div>
+					<div class="modal-body">
+						<h3> Are you sure you want to delete the departments? </h3>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-danger" ng-click="delete()">Remove 
 							<i class="fa fa-trash" aria-hidden="true" >
 							</i>
-						</a>
-
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-	<div class="modal fade" id="myModal2" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Remove Departments</h4>
-				</div>
-				<div class="modal-body">
-					<h3> Are you sure you want to delete the departments? </h3>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-danger" ng-click="delete()">Remove 
-						<i class="fa fa-trash" aria-hidden="true" >
-						</i>
-					</button>
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
 </div>
 <div class="panel panel-default">
 	<div class="panel-heading"> Devices
@@ -123,13 +123,6 @@
 								<option value=""></option>
 							</select>
 						</div>
-						<div class="col-md-4">
-							<label>Devices</label>
-							<select ng-model="department.devices_id" 
-							ng-options="device._id as device.name for device in devices"
-							class="form-control" required="required">
-							<option value=""></option>
-						</select>
 					</div>
 				</div>
 			</div>

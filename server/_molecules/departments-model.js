@@ -19,7 +19,9 @@ const Departments = new Schema({
 	flag,
 	description,
 	EVMSCode,
-	devices_id,
+	device: [{
+		_id: devices_id
+	}],
 	register,
 	created_at,
 	updated_at

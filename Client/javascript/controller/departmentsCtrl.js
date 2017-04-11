@@ -75,6 +75,10 @@
 				})
 			}
 
+			$scope.listOneDepartment = function(department){
+				console.log(department)
+			}
+
 			$scope.deviceList = function(){
 				DeviceFactory.list().then(function(response){
 					$scope.devices = response.data;

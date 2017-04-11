@@ -32,10 +32,21 @@ const Employee = new Schema({
 	startDate,
 	endDate,
 	status,
-	stores_id,
-	business_id,
-	regions_id,
-	departments_id,
+	store: [{
+		_id: stores_id	
+	}],
+	busines: [{
+		_id: business_id,	
+	}],
+	region: [{
+		_id: regions_id
+	}],
+	profile: [{
+		_id: profile_id
+	}],
+	department: [{
+		_id: departments_id
+	}],
 	created_at,
 	updated_at
 });
