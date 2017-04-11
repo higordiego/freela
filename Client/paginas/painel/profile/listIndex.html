@@ -1,4 +1,4 @@
-<div class="col-md-12" style="margin-top: 10px" ng-init="departmentList()">
+<div class="col-md-12" style="margin-top: 10px" ng-init="profileList()">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h6 class="panel-title">
@@ -16,32 +16,150 @@
 					<thead>
 						<tr>
 							<th>#</th>
+							<th> Name </th>
 							<th>Emplooye</th>
 							<th>Busines</th>
 							<th>Region</th>
 							<th>Store</th>
 							<th>Department</th>
-							<th>Setup</th>
 							<th>Description </th>
-							<th> Action </th>
+							<th class="text-center"> Action </th>
 							
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td>Eugene</td>
-							<td>Eugene</td>
-							<td>Eugene</td>
-							<td>Eugene</td>
-							<td>Eugene</td>
-							<td>Eugene</td>
-							<td>Description field</td>
-							<td>Active</td>
-						</tr>
-					</tbody>
-				</table>
+						<tr ng-repeat="(key, prof) in profiles">
+							<td>{{key + 1}}</td>
+							<td> {{prof.employee_id}} </td>
+							<td>{{prof.employee ? 'Allowed' : 'Denied'}}</td>
+							<td>{{prof.busines ? 'Allowed' : 'Denied'}}</td>
+							<td>{{prof.region ? 'Allowed' : 'Denied'}}</td>
+							<td>{{prof.store ? 'Allowed' : 'Denied'}}</td>
+							<td>{{prof.department ? 'Allowed' : 'Denied'}}</td>
+							<td>{{prof.description}}</td>
+							<td class="text-center">
+								<a type="button" data-toggle="modal" data-target="#myModal"
+								ng-click="preUpdate(prof)"
+								class="btn btn-info btn-xs">
+								<i class="fa fa-pencil" aria-hidden="true"></i>
+							</a>
+							<a class="btn btn-danger btn-xs" ng-click="preDelete(prof)"
+							data-toggle="modal" data-target="#myModal2">
+							<i class="fa fa-trash" aria-hidden="true" >
+							</i>
+						</a>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Remove Profile</h4>
+				</div>
+				<div class="modal-body">
+					<h3> Are you sure you want to delete the profile? </h3>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-danger" ng-click="delete()">Remove 
+						<i class="fa fa-trash" aria-hidden="true" >
+						</i>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
+
+<div class="modal fade" id="myModal" role="dialog">
+	<form ng-submit="add(profileEmployee)">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" ng-click="close()" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">{{title}}</h4>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-2">
+								<label>Emplooye</label>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" ng-model="profileEmployee.employee" value="true">
+										Active
+									</label>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>Busines</label>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" ng-model="profileEmployee.busines" value="true">
+										Active
+									</label>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>Region</label>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" ng-model="profileEmployee.region" value="true">
+										Active
+									</label>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>Store</label>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" ng-model="profileEmployee.store" value="true">
+										Active
+									</label>
+								</div>
+							</div>
+							<div class="col-md-2">
+								<label>Department</label>
+								<div class="checkbox">
+									<label>
+										<input type="checkbox" ng-model="profileEmployee.department" value="true">
+										Active
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group" ng-init="employeeList()">
+						<div class="row">
+							<div class="col-md-6">
+								<label>Description</label>
+								<input type="text" ng-model="profileEmployee.description" placeholder="Enter new Description"  class="form-control">
+							</div>
+							<div class="col-md-5">
+								<label>Employee</label>
+								<select ng-model="profileEmployee.employee_id" 
+								ng-options="employee._id as employee.userName for employee in employees"
+								class="form-control" required="required">
+								<option value=""></option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Close</button>
+					<button type="submit"  ng-class="class">{{type}} 
+						<i class="icon-arrow-right14 position-right">
+						</i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
 </div>

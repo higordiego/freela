@@ -3,7 +3,7 @@ const Profile  = require('../../_molecules/profile-model')
 const ctrl = {
 		make: (req,res,next)=>{
 			req.assert('description', 'valid description is required').notEmpty();
-			req.assert('name', 'valid name is required').notEmpty()
+			req.assert('employee_id', 'valid employee_id is required').notEmpty();
 			const error = req.validationErrors();
 			error ? res.json(error) :  next()	
 		},
