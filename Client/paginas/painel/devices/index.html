@@ -1,0 +1,137 @@
+<div class="col-md-10 col-md-offset-1" style="margin-top: 10px" ng-init="deviceList()">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h6 class="panel-title">
+				List Devices
+				<button class="btn btn-primary btn-sm btn-icon col-md-offset-10" data-toggle="modal" data-target="#myModal">
+					<i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
+				</button>
+			</h6>
+			<div class="heading-elements">
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Name</th>
+							<th>Store</th>
+							<th>Company</th>
+							<th>EVMSCode </th>
+							<th>idDevice </th>
+							<th> Enable </th>
+							<th class="text-center">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="(key, devi) in devices">
+							<td>{{key +1}} </td>
+							<td> {{devi.name}} </td>
+							<td> {{devi.stores_id.name}} </td>
+							<td> {{devi.company_id.name}} </td>
+							<td> {{devi.EVMSCode}} </td>
+							<td> {{devi.idDevice}} </td>
+							<td> {{devi.enable ? 'Active': 'Disable'}} </td>
+							<td class="text-center">
+								<a type="button" data-toggle="modal" data-target="#myModal" ng-click="preUpdate(devi)"
+								class="btn btn-info btn-xs">
+								<i class="fa fa-pencil" aria-hidden="true"></i>
+							</a>
+							<a class="btn btn-danger btn-xs" ng-click="preDelete(devi)"
+							data-toggle="modal" data-target="#myModal2">
+							<i class="fa fa-trash" aria-hidden="true" >
+							</i>
+						</a>
+
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="modal fade" id="myModal2" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Remove Device</h4>
+				</div>
+				<div class="modal-body">
+					<h3> Are you sure you want to delete the device? </h3>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-danger" ng-click="delete()">Remove 
+						<i class="fa fa-trash" aria-hidden="true" >
+						</i>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="myModal" role="dialog">
+		<form ng-submit="add(device)">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" ng-click="close()" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">{{title}}</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Name</label>
+									<input type="text" ng-model="device.name"  placeholder="Enter name Device" class="form-control">
+								</div>
+								<div class="col-md-6">
+									<label>IdDevice</label>
+									<input type="text" ng-model="device.idDevice"  placeholder="Enter new idDevice" class="form-control">
+								</div>
+							</div>
+						</div>
+						<div class="form-group" ng-init="storeList()">
+							<div class="row" ng-init="companyList()">
+								<div class="col-md-4">
+									<label> Stores </label>
+									<select ng-model="device.stores_id"
+									ng-options="store._id as store.name for store in stores" class="form-control" >
+								</select>
+							</div>
+							<div class="col-md-4">
+								<label> Company </label>
+								<select ng-model="device.company_id"
+								ng-options="company._id as company.name for company in companys" class="form-control" >
+							</select>
+						</div>
+						<div class="col-md-4">
+							<label>EVMSCode</label>
+							<input type="text" ng-model="device.EVMSCode"  placeholder="Enter new EVMSCode" class="form-control">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-4">
+							<label class="display-block">Enable</label>
+							<label class="radio-inline">
+								<input type="radio" required  ng-model="device.enable" name="optradio" value="true">Active
+							</label>
+							<label class="radio-inline">
+								<input type="radio" required ng-model="device.enable" name="optradio" value="false">Disable
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Close</button>
+					<button type="submit" ng-class="class">{{type}} 
+						<i class="icon-arrow-right14 position-right">
+						</i>
+					</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,168 @@
+<div class="col-md-12" style="margin-top: 10px" ng-init="staffList()">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h6 class="panel-title">
+				List Staff
+				<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" data-toggle="modal" data-target="#myModal">
+					<i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
+				</button>
+			</h6>
+			<div class="heading-elements">
+			</div>
+		</div>
+		<div class="panel-body">
+			<div class="table-responsive">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>firstName</th>
+							<th>lastName</th>
+							<th>userName</th>
+							<th>Email</th>
+							<th>status</th>
+							<th>Register</th>
+							<th>stores</th>
+							<th>business</th>
+							<th>regions</th>
+							<th>departments</th>
+							<th class="text-center">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="(key, staff) in staffs">
+							<td>{{key +1}} </td>
+							<td> {{staff.firstName}} </td>
+							<td> {{staff.lastName}} </td>
+							<td> {{staff.userName}} </td>
+							<td> {{staff.email}} </td>
+							<td> {{staff.status ? 'Active': 'Disable'}} </td>
+							<td> {{staff.register_id.name}} </td>
+							<td> {{staff.stores_id.name}} </td>
+							<td> {{staff.business_id.name}} </td>
+							<td> {{staff.regions_id.name}} </td>
+							<td> {{staff.departments_id.name}} </td>
+							
+							<td class="text-center">
+								<a type="button" data-toggle="modal" data-target="#myModal"
+								ng-click="preUpdate(staff)"
+								class="btn btn-info btn-xs">
+								<i class="fa fa-pencil" aria-hidden="true"></i>
+							</a>
+							<a class="btn btn-danger btn-xs" ng-click="preDelete(staff)"
+							data-toggle="modal" data-target="#myModal2">
+							<i class="fa fa-trash" aria-hidden="true" >
+							</i>
+						</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="modal fade" id="myModal" role="dialog" ng-init="storesList()">
+		<form ng-submit="add(employee)" ng-init="regionList()">
+			<div class="modal-dialog" ng-init="businessList()">
+				<!-- Modal content-->
+				<div class="modal-content" ng-init="departmentList()">
+					<div class="modal-header">
+						<button type="button" class="close" ng-click="close()" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">{{title}}</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-4">
+									<label>Firstname </label>
+									<input type="text" class="form-control" ng-model="employee.firstName">
+								</div>
+								<div class="col-md-4">
+									<label>LastName </label>
+									<input type="text" class="form-control" ng-model="employee.lastNameName">
+								</div>
+								<div class="col-md-4">
+									<label>Username </label>
+									<input type="text" class="form-control" ng-model="employee.userName">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Password</label>
+									<input type="password" class="form-control" ng-model="employee.password">
+								</div>
+								<div class="col-md-6">
+									<label>Email </label>
+									<input type="text" class="form-control" ng-model="employee.email">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-4">
+									<label>Register </label>
+									<input type="text" class="form-control" ng-model="employee.register">
+								</div>
+								<div class="col-md-4">
+									<label class="display-block">Status</label>
+									<label class="radio-inline">
+										<input type="radio" required  ng-model="employee.status" name="optradio" value="true">Active
+									</label>
+									<label class="radio-inline">
+										<input type="radio" required ng-model="employee.status" name="optradio" value="false">Disable
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="row">
+								<div class="col-md-6">
+									<label>Stores</label>
+									<select ng-model="employee.stores_id" 
+									ng-options="store._id as store.name for store in stores"
+									class="form-control" required="required">
+									<option value=""></option>
+								</select>
+							</div>
+							<div class="col-md-6">
+								<label>Busines</label>
+								<select ng-model="employee.business_id" 
+								ng-options="bus._id as bus.name for bus in business"
+								class="form-control" required="required">
+								<option value=""></option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="row">
+						<div class="col-md-6">
+							<label>Region</label>
+							<select ng-model="employee.regions_id" 
+							ng-options="region._id as region.name for region in regions"
+							class="form-control" required="required">
+							<option value=""></option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label>Department</label>
+						<select ng-model="employee.departments_id" 
+						ng-options="department._id as department.name for department in departments"
+						class="form-control" required="required">
+						<option value=""></option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Close</button>
+			<button type="submit" ng-class="class">{{type}} 
+				<i class="icon-arrow-right14 position-right">
+				</i>
+			</button>
+		</div>
+	</div>
+</div>
+</form>
+</div>
+</div>
