@@ -4,15 +4,11 @@
 
     return {
       request: function (config) {
-        // Validando url externa...
-        var pos = config.url.lastIndexOf("https://");
         var recebe = config.url.lastIndexOf('upload');
         if(recebe > 1){
          config.headers['Content-Type']= undefined;
          config.headers['x-access-token'] = $localStorage.token;
-       } else if(pos == 0 ){
-        config.headers = config.headers || {};
-      }else{
+       } else{
         config.headers = config.headers || {};
         config.headers['x-access-token'] = $localStorage.token;
       }
@@ -27,7 +23,6 @@
     }
   };
 }])
-
   app.config(function ($httpProvider) {
     $httpProvider.interceptors.push('authInterceptor');
   });
