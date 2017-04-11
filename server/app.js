@@ -9,8 +9,6 @@ const validator      = require ('express-validator')
 const mongo 		 = require ('./_config/mongoDB')
 
 const app = express();
-const jwt = require('./_config/jwtConfig')(express,app);
-
 
 app.set('superSecret', '1a5H(qzO&1+!8M35tXvai3A*JF%Os]eOoG63/Oo+:1S(R[%x[js09UKDam0#85'); 
 
@@ -22,6 +20,7 @@ app.use(validator());
 app.use(cors());
 
 
+const jwt = require('./_config/jwtConfig')(express,app);
 
 
 app.use('/api', jwt);
