@@ -30,7 +30,7 @@
 					<tbody>
 						<tr ng-repeat="(key, prof) in profiles">
 							<td>{{key + 1}}</td>
-							<td> {{prof.employee_id}} </td>
+							<td> {{prof.employee_id.userName}} </td>
 							<td>{{prof.employee ? 'Allowed' : 'Denied'}}</td>
 							<td>{{prof.busines ? 'Allowed' : 'Denied'}}</td>
 							<td>{{prof.region ? 'Allowed' : 'Denied'}}</td>
