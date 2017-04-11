@@ -1,8 +1,8 @@
 (function(){
 	'use strict'
-	var online = false
+	var online = true
 	app.constant('Config', {
-		api: online ? '' :'http://localhost:3001/api/',
-		user: online ? '' : 'http://localhost:3001/'
+		api: online ? 'https://eyerson.herokuapp.com/api/' :'http://localhost:3001/api/',
+		user: online ? 'https://eyerson.herokuapp.com/' : 'http://localhost:3001/'
 	})
 })()
