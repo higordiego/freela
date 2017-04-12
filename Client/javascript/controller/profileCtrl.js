@@ -1,12 +1,13 @@
 (function(){
 	'use strict'
 	app.controller('ProfileCtrl', ['$scope','AuthService','$location', 'PainelFactory'
-		, 'ProfileFactory', 'StaffFactory'
-		,function($scope,AuthService,$location,PainelFactory,ProfileFactory,StaffFactory){
+		, 'ProfileFactory', 'StaffFactory', '$state'
+		,function($scope,AuthService,$location,PainelFactory,ProfileFactory,StaffFactory,$state){
 			$scope.profileEmployee = {};
 			$scope.preProfile = {};
 			$scope.profiles = [];
 			$scope.employees = [];
+
 
 			$scope.profileList = function(){
 				ProfileFactory.list().then(function(response){
@@ -50,13 +51,12 @@
 			}
 
 			$scope.preDelete = function(profileEmployee){
-
 				$scope.preProfile = profileEmployee;
 			}
 
 			$scope.preUpdate = function(profileEmployee){
-
 				$scope.profileEmployee = profileEmployee
+				$scope.profileEmployee.employee_id = profileEmployee.employee_id._id
 				$scope.title = "Form Update Region "
 				$scope.class = "btn btn-info"
 				$scope.type = 'Update'
@@ -72,7 +72,6 @@
 					console.log(err)
 				})
 			}
-
 
 
 		}]);

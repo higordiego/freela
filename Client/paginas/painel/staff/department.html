@@ -1,0 +1,53 @@
+<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" data-toggle="modal" data-target="#department">
+  <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
+</button>
+<br/><br/>
+<div class="tab-content">
+  <div id="home" class="tab-pane fade in active">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Store</th>
+            <th>Device</th>
+            <th>Description</th>
+            <th>Register</th>
+            <th>EVMSCode</th>
+            <th>Flag</th>
+            <th>Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="department" role="dialog" style="margin-top: 150px">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">User Department </h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="form-group">
+          <label>Departmnet </label>
+            <select class="form-control" ng-model="employee.department" ng-options="department._id as department.name for department in departments">
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
+      </div>
+    </div>
+  </div>
+</div>

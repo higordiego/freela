@@ -1,8 +1,8 @@
 (function(){
 	'use strict'
 	app.controller('StaffCtrl', ['$scope', 'StaffFactory', 'StoresFactory', 'BusinessFactory','DepartmentFactory'
-		, 'ProfileFactory', 'RegionFactory'
-		, function ($scope,StaffFactory,StoresFactory,BusinessFactory,DepartmentFactory,ProfileFactory,RegionFactory) {
+		, 'ProfileFactory', 'RegionFactory', '$state'
+		, function ($scope,StaffFactory,StoresFactory,BusinessFactory,DepartmentFactory,ProfileFactory,RegionFactory,$state) {
 			
 			$scope.staff = {};	
 			$scope.staffs = [];
@@ -18,6 +18,7 @@
 			}
 
 			$scope.close();
+
 			
 			$scope.staffList = function(){
 				StaffFactory.list().then(function(response){
@@ -49,6 +50,26 @@
 				})
 			}
 
+			$scope.businessRoute = function(){
+				$state.go('painel.staff.business')	
+			}
+
+			$scope.businessRoute()
+
+			$scope.regionRoute = function(){
+				$state.go('painel.staff.region')	
+			}
+
+			$scope.storeRoute = function(){
+				$state.go('painel.staff.store')	
+			}
+
+			$scope.departmentRoute = function(){
+				$state.go('painel.staff.department')	
+			}
+
+			
+			
 
 
 		}])
