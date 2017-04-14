@@ -9,6 +9,8 @@
 				$location.path('/');
 			}
 
+			$state.go('painel.dashboard')
+
 			$scope.profile = function(){
 				$state.go('painel.profile')
 			}
