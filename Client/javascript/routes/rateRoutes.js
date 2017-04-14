@@ -8,6 +8,12 @@
             controller: 'RateCtrl',
             authorize: true
         })
+        .state("painel.dashboard", {
+            url: '/dashboard',
+            templateUrl : "../paginas/painel/report/dashboard.html",
+            controller: 'RateCtrl',
+            authorize: true
+        })
         $urlRouterProvider
         .otherwise('/');
     }]);
