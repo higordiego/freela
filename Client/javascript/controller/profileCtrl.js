@@ -1,11 +1,12 @@
 (function(){
 	'use strict'
 	app.controller('ProfileCtrl', ['$scope','AuthService','$location', 'PainelFactory'
-		, 'ProfileFactory', 'StaffFactory', '$state'
-		,function($scope,AuthService,$location,PainelFactory,ProfileFactory,StaffFactory,$state){
+		, 'ProfileFactory', 'StaffFactory', '$state', 'Flash'
+		,function($scope,AuthService,$location,PainelFactory,ProfileFactory,StaffFactory,$state,Flash){
 			$scope.profileEmployee = {};
 			$scope.preProfile = {};
 			$scope.profiles = [];
+			$scope.myProfile = {};
 			$scope.employees = [];
 
 
@@ -72,7 +73,35 @@
 					console.log(err)
 				})
 			}
+			/*
+				update senha
+				*/
+				$scope.profileDetails = function(){
+					$scope.myProfile = AuthService.getUser();
+				}
 
+				$scope.profileUpdate = function(profile){
+					var updateObject = {
+						_id: profile._id,
+						firstName: profile.firstName,
+						lastName: profile.lastName,
+						email: profile.email,
+						password: profile.password
+					}
+					StaffFactory.updateMyProfile(updateObject).then(function(resp){
+						Flash.clear()
+						delete $scope.myProfile;
+						AuthService.deleteUser();
+						PainelFactory.detailsUser().then(function(response){
+							console.log(response)
+							$scope.myProfile = response.data
+							AuthService.setUser($scope.user)
+							Flash.create('primary', 'Update with success!');
+						})
 
-		}]);
+					})
+
+				}
+
+			}]);
 })();

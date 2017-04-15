@@ -17,6 +17,9 @@
       setUser: function (user){
         $localStorage.user = user;
       },
+      deleteUser: function(){
+        delete $localStorage.user;
+      },
 
       signin : function (data) {
        return $http.post(Config.user, data);

@@ -14,6 +14,18 @@
             controller: 'RateCtrl',
             authorize: true
         })
+        .state("painel.investigation", {
+            url: '/investigation',
+            templateUrl : "../paginas/painel/report/investigation.html",
+            controller: 'RateCtrl',
+            authorize: true
+        })
+        .state("painel.myalert", {
+            url: '/myalert',
+            templateUrl : "../paginas/painel/report/myAlert.html",
+            controller: 'RateCtrl',
+            authorize: true
+        })
         $urlRouterProvider
         .otherwise('/');
     }]);

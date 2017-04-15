@@ -4,6 +4,7 @@
 		function($scope,AuthService,$location,PainelFactory,$state){
 			$scope.user = {};
 			$scope.logout = function(){
+				console.log('testando')
 				AuthService.logout();
 				delete $scope.user
 				$location.path('/');

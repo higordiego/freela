@@ -5,6 +5,7 @@ module.exports =  (app) => {
   const listOne           = require( '../../../_organelles/organelle-findById');
   const update            = require( '../../../_organelles/organelle-update');
   const remove            = require( '../../../_organelles/organelle-remove');
+  const updateProfile     = require( '../../../_organelles/organelle-update-myProfile');
   const listEmployeeEmail = require('../../../_organelles/organelle-listEmployeeToken')
   const forgot            = require('../../../_organelles/organelle-forgot')
   const passwordUpdate    = require('../../../_organelles/organelle-forgot-update')
@@ -33,29 +34,33 @@ module.exports =  (app) => {
   //    .post(create(employeeModel))
 
   app.route('/forgot/:email')
-     .get(forgot(employeeModel))
+  .get(forgot(employeeModel))
 
   app.route('/forgot/validate/:forgot')
-     .get(validateForgot(employeeModel))
+  .get(validateForgot(employeeModel))
 
   app.route('/forgot/password')
-     .post(passwordUpdate(employeeModel))
+  .post(passwordUpdate(employeeModel))
 
 
   app.route(url)
-      .post(validate.make, create(employeeModel))
-      .get(list(employeeModel))
+  .post(validate.make, create(employeeModel))
+  .get(list(employeeModel))
 
   app.route(url + '/:username/:password/:email')
   .delete(removeEmployee(employeeModel))
 
   app.route(url + '/details/token')
-     .post(listEmployeeEmail(employeeModel))
+  .post(listEmployeeEmail(employeeModel))
 
   app.route(url +'/:id')
-      .get(validate.change, listOne(employeeModel))
-      .put(validate.change, update(employeeModel))
-      .delete(validate.delete, remove(employeeModel))
+  .get(validate.change, listOne(employeeModel))
+  .put(validate.change, update(employeeModel))
+  .delete(validate.delete, remove(employeeModel))
+
+
+  app.route(url + '/update/employeeProfile/:id')
+  .put(validate.change, updateProfile(employeeModel))
 
 
 }

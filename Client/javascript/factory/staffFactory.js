@@ -17,6 +17,9 @@
 				},
 				delete: function(dados){
 					return $http.delete(Config.api + 'employee/'+ dados._id)
+				},
+				updateMyProfile: function(dados){
+					return $http.put(Config.api + 'employee/update/employeeProfile/'+ dados._id , dados)
 				}
 			};
 		}]);
