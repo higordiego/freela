@@ -1,0 +1,195 @@
+<div class="page-header">
+	<div class="page-header-content">
+		<div class="page-title">
+			<h4><i class="icon-arrow-left52 position-left"></i> <span class="text-semibold">e-Messages </span>  Center</h4>
+
+			<ul class="breadcrumb breadcrumb-caret position-right">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="task_manager_list.html">My Alerts</a></li>
+				<li class="active">Alerts</li>
+			</ul>
+		</div>
+
+
+	</div>
+	<!-- /page header -->
+	<!-- Page container -->
+	<!-- Page container -->
+	<div class="page-container" style="min-height:246.3958282470703px">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+
+				<!-- Task manager table -->
+				<div class="panel panel-white">
+					<div class="panel-heading">
+						<h6 class="panel-title">Eyeson Alerts<a class="heading-elements-toggle"><i class="icon-more"></i></a></h6>
+					</div>
+
+					<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+						<div class="datatable-header">
+							<div id="DataTables_Table_0_filter" class="dataTables_filter">
+								<label>
+									<span>Filter:</span> 
+									<input type="search" class="" placeholder="Type to filter..." ng-model="filtro" aria-controls="DataTables_Table_0">
+								</label>
+							</div>
+							<div class="dataTables_length" id="DataTables_Table_0_length">
+								<label>
+									<span>Show:</span> 
+									<select name="DataTables_Table_0_length"
+									aria-controls="DataTables_Table_0" 
+									class="select2-hidden-accessible" 
+									tabindex="-1" aria-hidden="true"
+									ng-model="myAlert.amount">
+									<option  value="10">10</option>
+									<option value="20">20</option>
+									<option value="30">30</option>
+									<option value="40">40</option>
+									<option value="50">50</option>
+								</select>
+								<span class="select2 select2-container select2-container--default" dir="ltr"
+								style="width: auto;">
+								<span class="selection">
+									<span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-DataTables_Table_0_length-8t-container">
+										<span class="select2-selection__rendered" id="select2-DataTables_Table_0_length-8t-container" title="10">10</span>
+										<span class="select2-selection__arrow" role="presentation"><b role="presentation"></b>
+										</span>
+									</span>
+								</span>
+								<span class="dropdown-wrapper" aria-hidden="true"></span>
+							</span>
+						</label>
+					</div>
+				</div>
+				<div class="datatable-scroll-lg">
+					<table class="table tasks-list table-lg dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+						<thead>
+							<tr role="row">
+								<th class="sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="descending" aria-label="Store: activate to sort column ascending" style="width: 20px;">
+									Store
+								</th>
+
+								<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 40%;">Description
+								</th>
+
+								<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Priority: activate to sort column ascending" style="width: 10%;">Priority
+								</th>
+								<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Created: activate to sort column ascending" style="width: 15%;">
+									Created
+								</th>
+								<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 15%;">
+									Status
+								</th>
+								<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Assigned users: activate to sort column ascending" style="width: 15%;">Assigned users
+								</th>
+								<th class="text-center text-muted sorting_disabled" style="width: 100px;" rowspan="1" colspan="1" aria-label=""><i class="icon-checkmark3"></i>
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+						<tr role="row" class="odd" ng-repeat="(key, myAlert) in myAlerts | filter: filtro">
+								<td class="sorting_1">{{myAlert.storeNumber}}</td>
+								<td>
+									<div class="text-semibold">
+										<a href="">
+											{{myAlert.descriptionStore}}
+										</a>
+									</div>
+									<div class="text-muted">
+										{{myAlert.descriptionStoreMessage}}
+									</div>
+								</td>
+								<td>
+									<select class="form-control" ng-model="myAlert.priority"
+									ng-options="priorit._id as priorit.name for priorit in myAlert.prioritys">
+								</select>
+							</td>
+							<td>
+								<div class="input-group input-group-transparent">
+									<div class="input-group-addon">
+										<i class="icon-calendar2 position-left">
+										</i>
+									</div>
+									<input type="text"
+									class="form-control datepicker hasDatepicker"
+									value="20 January, 16">
+								</div>
+							</td>
+							<td>
+								<select class="form-control">
+									<option value="open" selected="selected">Open</option>
+									<option value="hold">On hold</option>
+									<option value="invalid">Invalid</option>
+									<option value="closed">Closed</option>
+									<option value="closed">Closed by System</option>
+								</select>
+
+							</td>
+							<td>
+								<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt="">
+								</a>
+								<a  class="text-default">&nbsp;<i class="icon-plus22"></i></a>
+							</td>
+							<td class="text-center">
+								<ul class="icons-list">
+									<li class="dropdown">
+										<a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+										<ul class="dropdown-menu dropdown-menu-right">
+											<li><a ><i class="fa fa-search"></i> Start Investigation</a></li>
+											<li><a ><i class="icon-download"></i> Download Videos</a></li>
+											<li class="divider"></li>
+											<li><a ><i class="icon-rotate-ccw2"></i> Foward</a></li>
+											<li><a ><i class="icon-cross2"></i> Delete</a></li>
+										</ul>
+									</li>
+								</ul>
+							</td>
+						</tr>
+					</div>
+				</tbody>
+			</table>
+		</div>
+		<div class="datatable-footer">
+			<div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 10 of 15 entries</div>
+			<div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">
+				←
+			</a>
+			<span>
+				<a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">
+					1
+				</a>
+				<a class="paginate_button " aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0">
+					2
+				</a>
+			</span>
+			<a class="paginate_button next" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" id="DataTables_Table_0_next">
+				→
+			</a>
+		</div>
+	</div>
+</div>
+</div>
+<!-- /task manager table -->
+
+</div>
+<!-- /main content -->
+
+</div>
+<!-- /page content -->
+
+</div>
+
+
+<div class="row">
+	<div class="footer text-muted">
+		© 2016. <a href="http://www.eyeson.biz">Eyeson Digital, LLC</a>
+	</div>
+</div>
+<!-- /footer -->
+
+
+</div>

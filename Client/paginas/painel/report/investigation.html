@@ -1,0 +1,541 @@
+<div class="page-header" style="margin-top: 20px">
+	<div class="page-header-content">
+		<div class="page-title">
+			<a class="heading-elements-toggle"><i class="icon-more"></i></a></div>
+
+			<div class="heading-elements">
+				<a  class="btn bg-blue btn-labeled heading-btn"><b><i class="icon-task"></i></b> Start Investigation</a>
+				<a  class="btn btn-default btn-icon heading-btn"><i class="icon-gear"></i></a>
+			</div>
+		</div>
+	</div>
+	<div class="page-container" style="min-height:281.3958282470703px">
+
+		<!-- Page content -->
+		<div class="page-content">
+
+			<!-- Secondary sidebar -->
+			<div class="sidebar sidebar-secondary sidebar-default">
+				<div class="sidebar-content">
+
+					<!-- Search task -->
+					<div class="sidebar-category">
+						<div class="category-title">
+							<span>Search</span>
+						</div>
+						<div class="category-content">
+							<form action="#">
+								<div class="has-feedback has-feedback-left">
+									<input type="search" class="form-control" placeholder="Type and hit Enter">
+									<div class="form-control-feedback">
+										<i class="icon-search4 text-size-base text-muted"></i>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- Task navigation -->
+					<div class="sidebar-category">
+						<div class="category-title">
+							<span>Navigation</span>
+						</div>
+
+						<div class="category-content no-padding">
+							<ul class="navigation navigation-alt navigation-accordion">
+								<li><a ><i class="icon-collaboration"></i> Create team</a></li>
+								<li><a ><i class="icon-files-empty"></i> All Investigations</a></li>
+								
+								<li><a ><i class="icon-file-plus"></i> Active Investigations <span class="badge badge-default">28</span></a></li>
+								<li><a ><i class="icon-file-check"></i> Closed Investigations</a></li>
+								<li class="navigation-divider"></li>
+								<li><a ><i class="icon-reading"></i> Assigned to me <span class="badge badge-info">86</span></a></li>
+								<li><a ><i class="icon-make-group"></i> Assigned to my team <span class="badge badge-info">47</span></a></li>
+								<li><a ><i class="icon-cog3"></i> Settings</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- Revisions -->
+					<div class="sidebar-category">
+						<div class="category-title">
+							<span>Activity Stream</span>
+						</div>
+
+						<div class="category-content">
+							<ul class="media-list">
+								<li class="media">
+									<div class="media-left">
+										<a  class="btn border-info text-info btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-branch"></i></a>
+									</div>
+									
+									<div class="media-body">
+										<a >Chris Arney</a> created a new <span class="text-semibold">Investigation</span>
+										<div class="media-annotation">2 hours ago</div>
+									</div>
+								</li>
+
+								<li class="media">
+									<div class="media-left">
+										<a  class="btn border-success text-success btn-flat btn-rounded btn-icon btn-sm"><i class="icon-git-merge"></i></a>
+									</div>
+									
+									<div class="media-body">
+										<a >Eugene Kopyov</a> update <span class="text-semibold">status</span> for <span class="text-semibold">positive</span>
+										<div class="media-annotation">Dec 18, 18:36</div>
+									</div>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+					<!-- /revisions -->
+
+
+					<!-- Completeness stats -->
+					<div class="sidebar-category">
+						<div class="category-title">
+							<span>Completeness stats</span>
+						</div>
+
+						<div class="category-content">
+							<ul class="progress-list">
+								<li>
+									<label>Highest priority <span>80%</span></label>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-danger" style="width: 80%">
+											<span class="sr-only">80% Complete</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<label>High priority <span>70%</span></label>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-info" style="width: 70%">
+											<span class="sr-only">70% Complete</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<label>Normal priority <span>50%</span></label>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-primary" style="width: 50%">
+											<span class="sr-only">50% Complete</span>
+										</div>
+									</div>
+								</li>
+								<li>
+									<label>Low prioruty <span>60%</span></label>
+									<div class="progress progress-xxs">
+										<div class="progress-bar progress-bar-success" style="width: 60%">
+											<span class="sr-only">60% Complete</span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /completeness stats -->
+
+				</div>
+			</div>
+			<!-- /secondary sidebar -->
+
+
+			<!-- Main content -->
+			<div class="content-wrapper">
+				<!-- Tasks options -->
+				<div class="navbar navbar-default navbar-xs navbar-component">
+					<ul class="nav navbar-nav no-border visible-xs-block">
+						<li><a class="text-center collapsed" data-toggle="collapse" data-target="#navbar-filter"><i class="icon-menu7"></i></a></li>
+					</ul>
+
+					<div class="navbar-collapse collapse" id="navbar-filter">
+						<p class="navbar-text">Filter:</p>
+						<ul class="nav navbar-nav">
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-sort-time-asc position-left"></i> By date <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a >Show all</a></li>
+									<li class="divider"></li>
+									<li><a >Today</a></li>
+									<li><a >Yesterday</a></li>
+									<li><a >This week</a></li>
+									<li><a >This month</a></li>
+									<li><a >This year</a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown"><i class="icon-sort-amount-desc position-left"></i> By status <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a >Show all</a></li>
+									<li class="divider"></li>
+									<li><a >Open</a></li>
+									<li><a >Positive</a></li>
+									<li><a >Verbal Warning</a></li>
+									<li><a >Closed</a></li>
+									<li><a >Dublicate</a></li>
+									<li><a >Invalid</a></li>
+									<li><a >Wontfix</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-sort-amount-desc position-left"></i> By employee <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a >Show all</a></li>
+									<li class="divider"></li>
+									<li><a >Open</a></li>
+									<li><a >Positive</a></li>
+									<li><a >Verbal Warning</a></li>
+									<li><a >Closed</a></li>
+									<li><a >Dublicate</a></li>
+									<li><a >Invalid</a></li>
+									<li><a >Wontfix</a></li>
+								</ul>
+							</li>
+
+							<li class="dropdown">
+								<a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-sort-numeric-asc position-left"></i> By priority <span class="caret"></span></a>
+								<ul class="dropdown-menu">
+									<li><a >Show all</a></li>
+									<li class="divider"></li>
+									<li><a >Highest</a></li>
+									<li><a >High</a></li>
+									<li><a >Normal</a></li>
+									<li><a >Low</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<!-- /tasks options -->
+
+
+				<!-- Tasks grid -->
+				<div class="text-center content-group text-muted content-divider">
+					<span class="pt-10 pb-10">2 hours ago</span>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel border-left-lg border-left-primary">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h6 class="no-margin-top"><a href="investigation_detailed.php">#24. Create UI design model</a></h6>
+										<p class="mb-15">One morning, when Gregor Samsa woke from troubled..</p>
+
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a class="text-default">&nbsp;<i class="icon-plus22"></i></a>
+									</div>
+
+									<div class="col-md-4">
+										<ul class="list task-details">
+											<li>28 January, 2016</li>
+											<li class="dropdown">
+												Priority: &nbsp; 
+												<a class="label label-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></a>
+												<ul class="dropdown-menu dropdown-menu-right active">
+													<li><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+													<li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
+													<li class="active"><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+													<li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+												</ul>
+											</li>
+											<li><a >Acme Store 15</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="panel-footer panel-footer-condensed"><a class="heading-elements-toggle"><i class="icon-more"></i></a>
+								<div class="heading-elements">
+									<span class="heading-text">Due: <span class="text-semibold">23 hours</span></span>
+
+									<ul class="list-inline list-inline-condensed heading-text pull-right">
+										<li class="dropdown">
+											<a class="text-default dropdown-toggle" data-toggle="dropdown">Open <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right active">
+												<li class="active"><a >Open</a></li>
+												<li><a >Positive</a></li>
+												<li><a >Negative</a></li>
+												<li><a >Inconclusive</a></li>
+												<li><a >Closed</a></li>
+												<li class="divider"></li>
+												<li><a >Verbal Warning</a></li>
+												<li><a >1st Written Warning</a></li>
+												<li><a >2nd Written Warning</a></li>
+												<li><a >Pending Suspension</a></li>
+												<li><a >Pending Termination</a></li>
+												<li><a >Termination</a></li>
+
+											</ul>
+										</li>
+
+										<li class="dropdown">
+											<a class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a ><i class="icon-alarm-add"></i> Check in</a></li>
+												<li><a ><i class="icon-attachment"></i> Attach screenshot</a></li>
+												<li><a ><i class="icon-rotate-ccw2"></i> Reassign</a></li>
+												<li class="divider"></li>
+												<li><a ><i class="icon-pencil7"></i> Edit Investigation</a></li>
+												<li><a ><i class="icon-cross2"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div class="panel border-left-lg border-left-danger">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h6 class="no-margin-top"><a href="investigation_detailed.php">#23. New icons set for an iOS app</a></h6>
+										<p class="mb-15">A collection of textile samples lay spread out on the table..</p>
+
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a  class="text-default">&nbsp;<i class="icon-plus22"></i></a>
+									</div>
+
+									<div class="col-md-4">
+										<ul class="list task-details">
+											<li>20 January, 2015</li>
+											<li class="dropdown">
+												Priority: &nbsp; 
+												<a  class="label label-danger dropdown-toggle" data-toggle="dropdown">Highest <span class="caret"></span></a>
+												<ul class="dropdown-menu dropdown-menu-right active">
+													<li class="active"><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+													<li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
+													<li><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+													<li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+												</ul>
+											</li>
+											<li><a >Acme Store 05</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="panel-footer panel-footer-condensed"><a class="heading-elements-toggle"><i class="icon-more"></i></a>
+								<div class="heading-elements">
+									<span class="heading-text">Due: <span class="text-semibold">18 hours</span></span>
+
+									<ul class="list-inline list-inline-condensed heading-text pull-right">
+										<li class="dropdown">
+											<a  class="text-default dropdown-toggle" data-toggle="dropdown">Positive <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right active">
+												<li class="active"><a >Open</a></li>
+												<li><a >Positive</a></li>
+												<li><a >Negative</a></li>
+												<li><a >Inconclusive</a></li>
+												<li><a >Closed</a></li>
+												<li class="divider"></li>
+												<li><a >Verbal Warning</a></li>
+												<li><a >1st Written Warning</a></li>
+												<li><a >2nd Written Warning</a></li>
+												<li><a >Pending Suspension</a></li>
+												<li><a >Pending Termination</a></li>
+												<li><a >Termination</a></li>
+
+											</ul>
+										</li>
+
+										<li class="dropdown">
+											<a  class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right">
+												<li><a ><i class="icon-alarm-add"></i> Check in</a></li>
+												<li><a ><i class="icon-attachment"></i> Attach screenshot</a></li>
+												<li><a ><i class="icon-rotate-ccw2"></i> Reassign</a></li>
+												<li class="divider"></li>
+												<li><a ><i class="icon-pencil7"></i> Edit Investigation</a></li>
+												<li><a ><i class="icon-cross2"></i> Remove</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="panel border-left-lg border-left-success">
+							<div class="panel-body">
+								<div class="row">
+									<div class="col-md-8">
+										<h6 class="no-margin-top"><a href="investigation_detailed.php">#22. Create ad campaign banners set</a></h6>
+										<p class="mb-15">That he had recently cut out of an illustrated magazine..</p>
+
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a  class="position-relative"><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+										<a  class="text-default">&nbsp;<i class="icon-plus22"></i></a>
+									</div>
+
+									<div class="col-md-4">
+										<ul class="list task-details">
+											<li>10 January, 2016</li>
+											<li class="dropdown">
+												Priority: &nbsp; 
+												<a  class="label label-success dropdown-toggle" data-toggle="dropdown">  Low <span class="caret"></span></a>
+												<ul class="dropdown-menu dropdown-menu-right active">
+													<li><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+													<li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
+													<li><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+													<li class="active"><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+												</ul>
+											</li>
+											<li><a >Acme Store 01</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+
+							<div class="panel-footer panel-footer-condensed"><a class="heading-elements-toggle"><i class="icon-more"></i></a>
+								<div class="heading-elements">
+									<span class="heading-text">Due: <span class="text-semibold">22 hours</span></span>
+
+									<ul class="list-inline list-inline-condensed heading-text pull-right">
+										<li class="dropdown">
+											<a  class="text-default dropdown-toggle" data-toggle="dropdown">Verbal Warning <span class="caret"></span></a>
+											<ul class="dropdown-menu dropdown-menu-right active">
+												<ul class="dropdown-menu dropdown-menu-right active">
+													<li class="active"><a >Open</a></li>
+													<li><a >Positive</a></li>
+													<li><a >Negative</a></li>
+													<li><a >Inconclusive</a></li>
+													<li><a >Closed</a></li>
+													<li class="divider"></li>
+													<li><a >Verbal Warning</a></li>
+													<li><a >1st Written Warning</a></li>
+													<li><a >2nd Written Warning</a></li>
+													<li><a >Pending Suspension</a></li>
+													<li><a >Pending Termination</a></li>
+													<li><a >Termination</a></li>
+
+												</ul>
+
+												<li class="dropdown">
+													<a  class="text-default dropdown-toggle" data-toggle="dropdown"><i class="icon-menu7"></i> <span class="caret"></span></a>
+													<ul class="dropdown-menu dropdown-menu-right">
+														<li><a ><i class="icon-alarm-add"></i> Check in</a></li>
+														<li><a ><i class="icon-attachment"></i> Attach screenshot</a></li>
+														<li><a ><i class="icon-rotate-ccw2"></i> Reassign</a></li>
+														<li class="divider"></li>
+														<li><a ><i class="icon-pencil7"></i> Edit Investigation</a></li>
+														<li><a ><i class="icon-cross2"></i> Remove</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li></ul></div>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6">
+								<div class="panel border-left-lg border-left-primary">
+									<div class="panel-body">
+										<div class="row">
+											<div class="col-md-8">
+												<h6 class="no-margin-top"><a href="investigation_detailed.php">#21: Edit the draft for the icons</a></h6>
+												<p class="mb-15">You've got to get enough sleep. Other travelling salesmen..</p>
+
+												<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+												<a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
+												<a  class="text-default">&nbsp;<i class="icon-plus22"></i></a>
+											</div>
+
+											<div class="col-md-4">
+												<ul class="list task-details">
+													<li>4 January, 2016</li>
+													<li class="dropdown">
+														Priority: &nbsp; 
+														<a  class="label label-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></a>
+														<ul class="dropdown-menu dropdown-menu-right active">
+															<li><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
+															<li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
+															<li class="active"><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
+															<li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
+														</ul>
+													</li>
+													<li><a >Acme Store 12</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="panel-footer panel-footer-condensed"><a class="heading-elements-toggle"><i class="icon-more"></i></a>
+										<div class="heading-elements">
+											<span class="heading-text">Due: <span class="text-semibold">27 hours</span></span>
+
+											<ul class="list-inline list-inline-condensed heading-text pull-right">
+												<li class="dropdown">
+													<a  class="text-default dropdown-toggle" data-toggle="dropdown">Inconclusive <span class="caret"></span></a>
+													<ul class="dropdown-menu dropdown-menu-right active">
+														<li class="active"><a >Open</a></li>
+														<li><a >Positive</a></li>
+														<li><a >Negative</a></li>
+														<li><a >Inconclusive</a></li>
+														<li><a >Closed</a></li>
+														<li class="divider"></li>
+														<li><a >Verbal Warning</a></li>
+														<li><a >1st Written Warning</a></li>
+														<li><a >2nd Written Warning</a></li>
+														<li><a >Pending Suspension</a></li>
+														<li><a >Pending Termination</a></li>
+														<li><a >Termination</a></li>
+
+													</ul>
+												</li>
+
+												<li class="dropdown">
+													<a  class="text-default dropdown-toggle" data-toggle="dropdown">
+														<i class="icon-menu7"></i> <span class="caret"></span></a>
+														<ul class="dropdown-menu dropdown-menu-right">
+															<li><a ><i class="icon-alarm-add"></i> Check in</a></li>
+															<li><a ><i class="icon-attachment"></i> Attach screenshot</a></li>
+															<li><a ><i class="icon-rotate-ccw2"></i> Reassign</a></li>
+															<li class="divider"></li>
+															<li><a ><i class="icon-pencil7"></i> Edit Investigation</a></li>
+															<li><a ><i class="icon-cross2"></i> Remove</a></li>
+														</ul>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- /tasks grid -->
+							<!-- Pagination -->
+							<div class="text-center content-group-lg pt-20">
+								<ul class="pagination">
+									<li class="disabled"><a ><i class="icon-arrow-small-left"></i></a></li>
+									<li class="active"><a >1</a></li>
+									<li><a >2</a></li>
+									<li><a >3</a></li>
+									<li><a >4</a></li>
+									<li><a >5</a></li>
+									<li><a ><i class="icon-arrow-small-right"></i></a></li>
+								</ul>
+							</div>
+							<!-- /pagination -->
+
+						</div>
+						<!-- /main content -->
+
+
+					</div>
+					<!-- /page content -->
+
+				</div>
