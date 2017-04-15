@@ -25,19 +25,15 @@
                                     </li>
                                 </ul>
                             </div>
-
                             <!-- Progress counter -->
                             <div class="content-group-sm svg-center position-relative" id="goal-progress"></div>
                             <!-- /progress counter -->
-
                             <!-- Bars -->
                             <div id="goal-bars"></div>
                             <!-- /bars -->
-
                         </div>
                     </div>
                     <!-- /productivity goal -->
-
                 </div>
                 <div class="col-lg-3">
 
@@ -47,21 +43,24 @@
                             <div class="heading-elements">
                                 <ul class="icons-list">
                                     <li class="dropdown text-muted">
-                                        <a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-cog3"></i> <span class="caret"></span></a>
-                                        <ul class="dropdown-menu dropdown-menu-right">
-                                            <li><a ><i class="icon-sync"></i> Update data</a></li>
-                                            <li><a ><i class="icon-list-unordered"></i> Detailed log</a></li>
-                                            <li><a ><i class="icon-pie5"></i> Statistics</a></li>
-                                            <li><a ><i class="icon-cross3"></i> Clear list</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+                                        <a  class="dropdown-toggle" data-toggle="dropdown">
+                                            <i class="icon-cog3"></i> <span class="caret"></span></a>
+                                            <ul class="dropdown-menu dropdown-menu-right">
+                                                <li><a ><i class="icon-sync"></i> Update data</a></li>
+                                                <li><a ><i class="icon-list-unordered"></i> Detailed log</a></li>
+                                                <li><a ><i class="icon-pie5"></i> Statistics</a></li>
+                                                <li><a ><i class="icon-cross3"></i> Clear list</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Progress counter -->
+                                <div class="content-group-sm svg-center position-relative"
+                                id="hours-available-progress">
+
                             </div>
-
-                            <!-- Progress counter -->
-                            <div class="content-group-sm svg-center position-relative" id="hours-available-progress"></div>
                             <!-- /progress counter -->
-
 
                             <!-- Bars -->
                             <div id="hours-available-bars"></div>
@@ -278,12 +277,12 @@
                                             <i class="icon-calendar3 position-left"></i> <span>March 17, 2017 &nbsp; - &nbsp; April 15, 2017</span> <b class="caret"></b>
                                         </button></div>
                                     </form>
-                                    <ul class="icons-list">
+                                    <!-- <ul class="icons-list">
                                         <li><a data-action="collapse"></a></li>
                                         <li><a data-action="reload"></a></li>
                                         <li><a data-action="close"></a></li>
                                         <li><a class="icon-cog3" href="#modal_large" data-toggle="modal" data-target="#modal_large"></a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
 
@@ -299,20 +298,20 @@
                             <div class="panel-heading">
                                 <h5 class="panel-title">Employee <strong>Performance</strong><a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
                                 <div class="heading-elements">
-                                   <form class="heading-form" action="#">
+                                 <form class="heading-form" action="#">
                                     <div class="form-group">
-                                        
+
                                         <button type="button" class="btn btn-link daterange-ranges heading-btn text-semibold">
                                             <i class="icon-calendar3 position-left"></i> <span>March 17, 2017 &nbsp; - &nbsp; April 15, 2017</span> <b class="caret"></b>
                                         </button></div>
                                     </form>
-                                    <ul class="icons-list">
+                                    <!-- <ul class="icons-list">
                                         
                                         <li><a data-action="collapse"></a></li>
                                         <li><a data-action="reload"></a></li>
                                         <li><a data-action="close"></a></li>
                                         <li><a class="icon-cog3" href="#modal_large" data-toggle="modal" data-target="#modal_large"></a></li>
-                                    </ul>
+                                    </ul> -->
                                 </div>
                             </div>
 
@@ -324,26 +323,20 @@
                         </div>
                     </div>
                 </div>
-                <!-- /combined chart -->
-
                 <div class="col-md-12">
-                    <!-- Scatter plot -->
+
                     <div class="panel panel-flat">
                         <div class="panel-heading">
                             <h5 class="panel-title">Business <strong>Snapshot</strong><a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
                             <div class="heading-elements">
-                               <form class="heading-form" action="#">
+                             <form class="heading-form" action="#">
                                 <div class="form-group">
-                                    
+
                                     <button type="button" class="btn btn-link daterange-ranges heading-btn text-semibold">
                                         <i class="icon-calendar3 position-left"></i> <span>March 17, 2017 &nbsp; - &nbsp; April 15, 2017</span> <b class="caret"></b>
                                     </button></div>
                                 </form>
-                                <ul class="icons-list">
-                                    <li><a data-action="collapse"></a></li>
-                                    <li><a data-action="reload"></a></li>
-                                    <li><a data-action="close"></a></li>
-                                </ul>
+
                             </div>
                         </div>      
                         <div>
@@ -674,749 +667,128 @@
                             </table>
                         </div>
                     </div>
-                </div>
-                <!-- /scatter plot -->
-                
-                <div class="panel panel-white col-md-12">
-                    <div class="panel-heading">
-                        <h5 class="panel-title"><strong>e-Messages Center</strong><a class="heading-elements-toggle"><i class="icon-more"></i></a></h5>
-                        <div class="heading-elements">
-                            <ul class="icons-list">
-                                <li><a data-action="collapse"></a></li>
-                                <li><a data-action="reload"></a></li>
-                                <li><a data-action="close"></a></li>
-                            </ul>
+
+
+                    <div class="panel panel-white">
+                        <div class="panel-heading">
+                            <h6 class="panel-title">
+                            <strong> e-Messages Center </strong>
+                                <a class="heading-elements-toggle">
+                                    <i class="icon-more">
+
+                                    </i>
+                                </a>
+                            </h6>
                         </div>
-                    </div>
 
-                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer"><div class="datatable-header"><div id="DataTables_Table_0_filter" class="dataTables_filter"><label><span>Filter:</span> <input type="search" class="" placeholder="Type to filter..." aria-controls="DataTables_Table_0"></label></div><div class="dataTables_length" id="DataTables_Table_0_length"><label><span>Show:</span> <select name="DataTables_Table_0_length" aria-controls="DataTables_Table_0" class="select2-hidden-accessible" tabindex="-1" aria-hidden="true"><option value="10">10</option><option value="20">20</option><option value="30">30</option><option value="40">40</option><option value="50">50</option></select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: auto;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-DataTables_Table_0_length-ih-container"><span class="select2-selection__rendered" id="select2-DataTables_Table_0_length-ih-container" title="10">10</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span></label></div></div><div class="datatable-scroll-lg"><table class="table tasks-list table-lg dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
-                    <thead>
-                        <tr role="row"><th class="sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="descending" aria-label="Store: activate to sort column ascending" style="width: 20px;">Store</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Description: activate to sort column ascending" style="width: 40%;">Description</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Priority: activate to sort column ascending" style="width: 10%;">Priority</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Created: activate to sort column ascending" style="width: 15%;">Created</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 15%;">Status</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Assigned users: activate to sort column ascending" style="width: 15%;">Assigned users</th><th class="text-center text-muted sorting_disabled" style="width: 100px;" rowspan="1" colspan="1" aria-label=""><i class="icon-checkmark3"></i></th></tr>
-                    </thead>
-                    <tbody>
-
-                        <tr class="active border-double"><td colspan="8" class="text-semibold">Miami</td></tr><tr role="row" class="odd">
-                        <td class="sorting_1">Restaurant #7643</td>
-                        
-                        <td>
-                            <div class="text-semibold"><a href="myalerts_detailed.php">Discount over $20</a></div>
-                            
-                        </td>
-                        <td>
-                            <div class="btn-group">
-                                <a  class="label label-danger dropdown-toggle" data-toggle="dropdown">Highest <span class="caret"></span></a>
-                                <ul class="dropdown-menu dropdown-menu-right active">
-                                    <li class="active"><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
-                                    <li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
-                                    <li><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
-                                    <li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
-                                </ul>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="input-group input-group-transparent">
-                                <div class="input-group-addon"><i class="icon-calendar2 position-left"></i></div>
-                                <input type="text" class="form-control datepicker hasDatepicker" value="22 January, 16" id="dp1492253665976">
-                            </div>
-                        </td>
-                        <td>
-                            <select name="status" class="select select2-hidden-accessible" data-placeholder="Select status" tabindex="-1" aria-hidden="true">
-                                <option value="open" selected="selected">Open</option>
-                                <option value="hold">On hold</option>
-                                <option value="invalid">Invalid</option>
-                                <option value="closed">Closed</option>
-                                <option value="closed">Closed by System</option>
-                            </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 150px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-status-py-container"><span class="select2-selection__rendered" id="select2-status-py-container" title="Open">Open</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                        </td>
-                        <td>
-                            <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                            <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                            <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                            
-                        </td>
-                        <td class="text-center">
-                            <ul class="icons-list">
-                                <li class="dropdown">
-                                    <a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
-                                    <ul class="dropdown-menu dropdown-menu-right">
-                                        <li><a ><i class="fa fa-search"></i> Start Investigation</a></li>
-                                        <li><a ><i class="icon-download"></i> Download Videos</a></li>
-                                        <li class="divider"></li>
-                                        <li><a ><i class="icon-rotate-ccw2"></i> Foward</a></li>
-                                        <li><a ><i class="icon-cross2"></i> Delete</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr><tr role="row" class="even">
-                    <td class="sorting_1">Restaurant #643</td>
-                    
-                    <td>
-                        <div class="text-semibold"><a href="myalerts_detailed.php">High Traffic</a></div>
-                        
-                    </td>
-                    <td>
-                        <div class="btn-group dropup">
-                            <a  class="label label-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-menu-right active">
-                                <li><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
-                                <li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
-                                <li class="active"><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
-                                <li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
-                            </ul>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="input-group input-group-transparent">
-                            <div class="input-group-addon"><i class="icon-calendar2 position-left"></i></div>
-                            <input type="text" class="form-control datepicker hasDatepicker" value="22 January, 16" id="dp1492253665977">
-                        </div>
-                    </td>
-                    <td>
-                        <select name="status" class="select select2-hidden-accessible" data-placeholder="Select status" tabindex="-1" aria-hidden="true">
-                            <option value="open" selected="selected">Open</option>
-                            <option value="hold">On hold</option>
-                            <option value="invalid">Invalid</option>
-                            <option value="closed">Closed</option>
-                            <option value="closed">Closed by System</option>
-                        </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 150px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-status-bc-container"><span class="select2-selection__rendered" id="select2-status-bc-container" title="Open">Open</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                    </td>
-                    <td>
-                        <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                        <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                        <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                        
-                    </td>
-                    <td class="text-center">
-                        <ul class="icons-list">
-                            <li class="dropdown dropup">
-                                <a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
-                                <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a ><i class="fa fa-search"></i> Start Investigation</a></li>
-                                    <li><a ><i class="icon-download"></i> Download Videos</a></li>
-                                    <li class="divider"></li>
-                                    <li><a ><i class="icon-rotate-ccw2"></i> Foward</a></li>
-                                    <li><a ><i class="icon-cross2"></i> Delete</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                </tr><tr role="row" class="odd">
-                <td class="sorting_1">Restaurant #276</td>
-                
-                <td>
-                    <div class="text-semibold"><a href="myalerts_detailed.php">Excessive Void Transaction</a></div>
-                    
-                </td>
-                <td>
-                    <div class="btn-group dropup">
-                        <a  class="label label-danger dropdown-toggle" data-toggle="dropdown">Highest <span class="caret"></span></a>
-                        <ul class="dropdown-menu dropdown-menu-right active">
-                            <li class="active"><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
-                            <li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
-                            <li><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
-                            <li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
-                        </ul>
-                    </div>
-                </td>
-                <td>
-                    <div class="input-group input-group-transparent">
-                        <div class="input-group-addon"><i class="icon-calendar2 position-left"></i></div>
-                        <input type="text" class="form-control datepicker hasDatepicker" value="22 January, 16" id="dp1492253665978">
-                    </div>
-                </td>
-                <td>
-                    <select name="status" class="select select2-hidden-accessible" data-placeholder="Select status" tabindex="-1" aria-hidden="true">
-                        <option value="open" selected="selected">Open</option>
-                        <option value="hold">On hold</option>
-                        <option value="invalid">Invalid</option>
-                        <option value="closed">Closed</option>
-                        <option value="closed">Closed by System</option>
-                    </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 150px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-status-vi-container"><span class="select2-selection__rendered" id="select2-status-vi-container" title="Open">Open</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-                </td>
-                <td>
-                    <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                    <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                    
-                </td>
-                <td class="text-center">
-                    <ul class="icons-list">
-                        <li class="dropdown dropup">
-                            <a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <li><a ><i class="fa fa-search"></i> Start Investigation</a></li>
-                                <li><a ><i class="icon-download"></i> Download Videos</a></li>
-                                <li class="divider"></li>
-                                <li><a ><i class="icon-rotate-ccw2"></i> Foward</a></li>
-                                <li><a ><i class="icon-cross2"></i> Delete</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </td>
-            </tr><tr role="row" class="even">
-            <td class="sorting_1">Restaurant #276</td>
-            
-            <td>
-                <div class="text-semibold"><a href="myalerts_detailed.php">Total transaction over $150</a></div>
-                
-            </td>
-            <td>
-                <div class="btn-group dropup">
-                    <a  class="label label-primary dropdown-toggle" data-toggle="dropdown">Normal <span class="caret"></span></a>
-                    <ul class="dropdown-menu dropdown-menu-right active">
-                        <li><a ><span class="status-mark position-left bg-danger"></span> Highest priority</a></li>
-                        <li><a ><span class="status-mark position-left bg-info"></span> High priority</a></li>
-                        <li class="active"><a ><span class="status-mark position-left bg-primary"></span> Normal priority</a></li>
-                        <li><a ><span class="status-mark position-left bg-success"></span> Low priority</a></li>
-                    </ul>
-                </div>
-            </td>
-            <td>
-                <div class="input-group input-group-transparent">
-                    <div class="input-group-addon"><i class="icon-calendar2 position-left"></i></div>
-                    <input type="text" class="form-control datepicker hasDatepicker" value="22 January, 16" id="dp1492253665979">
-                </div>
-            </td>
-            <td>
-                <select name="status" class="select select2-hidden-accessible" data-placeholder="Select status" tabindex="-1" aria-hidden="true">
-                    <option value="open" selected="selected">Open</option>
-                    <option value="hold">On hold</option>
-                    <option value="invalid">Invalid</option>
-                    <option value="closed">Closed</option>
-                    <option value="closed">Closed by System</option>
-                </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 150px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-status-6x-container"><span class="select2-selection__rendered" id="select2-status-6x-container" title="Open">Open</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
-            </td>
-            <td>
-                <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                <a ><img src="assets/images/placeholder.jpg" class="img-circle img-xs" alt=""></a>
-                
-            </td>
-            <td class="text-center">
-                <ul class="icons-list">
-                    <li class="dropdown dropup">
-                        <a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
-                        <ul class="dropdown-menu dropdown-menu-right">
-                            <li><a ><i class="fa fa-search"></i> Start Investigation</a></li>
-                            <li><a ><i class="icon-download"></i> Download Videos</a></li>
-                            <li class="divider"></li>
-                            <li><a ><i class="icon-rotate-ccw2"></i> Foward</a></li>
-                            <li><a ><i class="icon-cross2"></i> Delete</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </td>
-        </tr></tbody>
-    </table></div><div class="datatable-footer"><div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to 4 of 4 entries</div><div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">←</a><span><a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">1</a></span><a class="paginate_button next disabled" aria-controls="DataTables_Table_0" data-dt-idx="2" tabindex="0" id="DataTables_Table_0_next">→</a></div></div></div>
-    <div id="modal_large" class="modal fade">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Basic Filters</h4>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="panel panel-flat">
-                            <div class="panel-heading">
-                                <h6 class="panel-title"><strong>LOCATIONS</strong><a class="heading-elements-toggle"><i class="icon-more"></i></a></h6>
-                                <div class="heading-elements">
-
+                        <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
+                            <div class="datatable-header">
+                                <div id="DataTables_Table_0_filter" class="dataTables_filter">
+                                    <label>
+                                        <span>Filter:</span> 
+                                        <input type="search" class="" placeholder="Type to filter..." ng-model="filtro" aria-controls="DataTables_Table_0">
+                                    </label>
                                 </div>
                             </div>
-                            
-                            <div class="panel-body">
-                               
+                            <div class="datatable-scroll-lg">
+                                <table class="table tasks-list table-lg dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="descending" aria-label="Store: activate to sort column ascending" style="width: 10px;">
+                                                City
+                                            </th>
+                                            <th class="sorting_desc" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-sort="descending" aria-label="Store: activate to sort column ascending" style="width: 10px;">
+                                                Store
+                                            </th>
+                                            <th class="sortng" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1"
+                                            colspan="1" aria-label="Description: activate to sort column ascending" 
+                                            style="width: 40%;">Description
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Priority: activate to sort column ascending" style="width: 10%;">Priority
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Created: activate to sort column ascending" style="width: 15%;">
+                                            Created
+                                        </th>
+                                        <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 15%;">
+                                            Status
+                                        </th>
+                                        <th class="text-center text-muted sorting_disabled" style="width: 100px;" rowspan="1" colspan="1" aria-label=""><i class="icon-checkmark3"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr role="row" class="odd" ng-repeat="(key, restaurant) in myRestarants | filter: filtro">
+                                        <td class="sorting_1">{{restaurant.city}}</td>
+                                        <td class="sorting_1">{{restaurant.storeNumber}}</td>
+                                        <td>
+                                            <div class="text-semibold">
+                                                <a href="">
+                                                    {{restaurant.descriptionStore}}
+                                                </a>
+                                            </div>
+                                            <div class="text-muted">
+                                                {{restaurant.descriptionStoreMessage}}
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <select class="form-control" ng-model="restaurant.priority"
+                                            ng-options="priorit._id as priorit.name for priorit in restaurant.prioritys">
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <div class="input-group input-group-transparent">
+                                            <div class="input-group-addon">
+                                                <i class="icon-calendar2 position-left">
+                                                </i>
+                                            </div>
+                                            <input type="text"
+                                            class="form-control datepicker hasDatepicker"
+                                            value="20 January, 16">
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <select class="form-control">
+                                            <option value="open" selected="selected">Open</option>
+                                            <option value="hold">On hold</option>
+                                            <option value="invalid">Invalid</option>
+                                            <option value="closed">Closed</option>
+                                            <option value="closed">Closed by System</option>
+                                        </select>
 
-                                <div class="tree-checkbox-hierarchical well border-left-danger border-left-lg">
-                                    <ul class="ui-fancytree-source ui-helper-hidden">
-                                        <li class="folder">PawnShop
-                                            <ul>
-                                                <li>Miami
-                                                    <ul>
-                                                        <li>Store 31
-                                                            <ul>
-                                                                <li>John Wayne</li>
-                                                                <li>David Mirra</li>
-                                                                <li>Bob Steam</li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="folder">Hospitality
-                                            <ul>
-                                                <li>Boston
-                                                    <ul>
-                                                        <li>Restaurant
-                                                            <ul>
-                                                                <li>John Wayne</li>
-                                                                <li>David Mirra</li>
-                                                                <li>Bob Steam</li>
-                                                            </ul>
-                                                        </li>
-                                                        <li> Restaurant 01
-                                                            <ul>
-                                                                <li>John Wayne</li>
-                                                                <li>David Mirra</li>
-                                                                <li>Bob Steam</li>
-                                                            </ul>
+                                    </td>
 
-
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        
-                                        
-                                    </ul>
-                                    <ul class="ui-fancytree fancytree-container fancytree-plain" tabindex="0"><li class=""><span class="fancytree-node fancytree-folder fancytree-has-children fancytree-exp-c fancytree-ico-cf"><span class="fancytree-expander"></span><span class="fancytree-checkbox"></span><span class="fancytree-icon"></span><span class="fancytree-title">PawnShop</span></span></li><li class="fancytree-lastsib"><span class="fancytree-node fancytree-folder fancytree-has-children fancytree-lastsib fancytree-exp-cl fancytree-ico-cf"><span class="fancytree-expander"></span><span class="fancytree-checkbox"></span><span class="fancytree-icon"></span><span class="fancytree-title">Hospitality</span></span></li></ul></div>
-                                </div>
+                                    <td class="text-center">
+                                        <ul class="icons-list">
+                                            <li class="dropdown">
+                                                <a  class="dropdown-toggle" data-toggle="dropdown"><i class="icon-menu9"></i></a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a ><i class="fa fa-search"></i> Start Investigation</a></li>
+                                                    <li><a ><i class="icon-download"></i> Download Videos</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a ><i class="icon-rotate-ccw2"></i> Foward</a></li>
+                                                    <li><a ><i class="icon-cross2"></i> Delete</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
                             </div>
-
-
-
-
-                            <div class="panel panel-flat">
-                                <div class="panel-heading">
-                                    
-                                    <div class="heading-elements">
-
-                                    </div>
-                                </div>
-
-                                <div class="panel-body">
-                                    <h6><strong>TRANSACTION TYPE:</strong></h6>
-                                    <div class="bootstrap-duallistbox-container row moveonselect"> <div class="box1 col-md-6"> <label for="bootstrap-duallistbox-nonselected-list_" style="display: none;"></label> <input class="filter form-control" type="text" placeholder="Filter"> <div class="btn-group buttons"> <button type="button" class="btn moveall btn-default" title="Move all"> <i class="icon-arrow-right22"></i> <i class="icon-arrow-right22"></i> </button> <button type="button" class="btn move btn-default" title="Move selected"> <i class="icon-arrow-right22"></i> </button> </div> <select multiple="multiple" id="bootstrap-duallistbox-nonselected-list_" class="form-control" name="_helper1" style="height: 216.222px;"><option value="option1">ACCEPT TABLE</option><option value="option2">ABERTURA DE CONTA</option><option value="option3">PUERTA CAJA ESTA ABIERTA</option><option value="option4">ACCESS CARD USED</option><option value="option5">ADDITION</option><option value="option6">ADJUST CHECK</option><option value="option7">ADD GRATUITY</option><option value="option8">ADJUST PAYMENT</option><option value="option9">ADD MEMBER POINTS</option><option value="option10">ALARM ACTIVE</option><option value="option11">ALARM NORMAL</option><option value="option12">CASH TENDERED</option><option value="option13">ACCRUED PAYMENT</option><option value="option14">ATTACH CLUB MEMBER</option><option value="option15">AUTHORIZED</option><option value="option16">BANKS OR SKIMS</option><option value="option17">BEGIN CASH</option><option value="option18">BALANCE DUE</option><option value="option19">BAL FWD</option><option value="option20">BREAKIN</option><option value="option21">BREAKOUT</option><option value="option22">BOTTLE RETURN</option><option value="option23">BUT/UFO</option><option value="option24">NEW BUY</option><option value="option25">CASH ADVANCE</option><option value="option26">CLEAR ALL</option><option value="option27">CASE CLOSED</option><option value="option28">CASE LEFT OPEN</option><option value="option29">CASE OPEN</option><option value="option30">CUSTOMER AT CASE</option><option value="option31">CUSTOMER AT DISPLAY</option><option value="option32">CUSTOMER AT DRIVE UP</option><option value="option33">CUST AT REGISTER</option><option value="option34">GC BAL</option><option value="option35">CREDIT CARD TENDERED</option><option value="option36">CANCEL CHANGES</option><option value="option37">CASH DROP</option><option value="option38">COLD/DROP FOOD</option><option value="option39">COUPON FINISH</option><option value="option40">CHARGE ACCT</option><option value="option41">CHANGE</option><option value="option42">ITEM ENTER LOCATION</option><option value="option43">CHECK TENDERED</option><option value="option44">CHECK CASHED</option><option value="option45">LOGIN</option><option value="option46">CUSTOMER LEFT CASE</option><option value="option47">CUSTOMER LEFT DISPLAY</option><option value="option48">CUSTOMER LEFT DRIVE UP</option><option value="option49">CUST LEFT REGISTER</option><option value="option50">CLICKER PRESSED</option><option value="option51">CLOSE TABLE</option><option value="option52">MFR COUPON</option><option value="option53">COMBINE CHECK</option><option value="option54">COUPON PAIDOUT</option><option value="option55">COUPON</option><option value="option56">ALTERAÇÃO DE SENHA</option><option value="option57">PAYMENT</option><option value="option58">CLIENT CREDIT CHANGED</option><option value="option59">CREATE NEW ITEM</option><option value="option60">CARD TROUBLE</option><option value="option61">CLEAR SPLIT</option><option value="option62">CUSTOMER IN FITTING ROOM</option><option value="option63">CUSTOMER OUT FITTING ROOM</option><option value="option64">CLOSETRANSACT</option><option value="option65">CLEAR TOTALS</option><option value="option66">EBT CASH WITHDRAWAL</option><option value="option67"></option><option value="option68">DELETE ADVANCE</option><option value="option69">DEBIT CARD TENDERED</option><option value="option70">DRAWER CLOSED</option><option value="option71">DRAWER CASH</option><option value="option72">DESBLOQUEIO CHEQUES</option><option value="option73">DOOR CLOSED</option><option value="option74"></option><option value="option75">DRAWER FOODSTAMP</option><option value="option76">DOOR FORCED OPEN</option><option value="option77">DISCOUNT</option><option value="option78">STARTING TILL FUND</option><option value="option79">DOOR LEFT OPEN</option><option value="option80">DRAWER OPENED</option><option value="option81">DOOR OPEN</option><option value="option82">DEPOSIT</option><option value="option83">DEPOSITO IDENTIFICADO</option><option value="option84">DEPOSITO</option><option value="option85">DEPOSIT RETURN</option><option value="option86">DISCOUNT PERCENT</option><option value="option87">DELETE SERVICE</option><option value="option88">DRAWER LEFT OPEN</option><option value="option89">EMPADJUSTMENT</option><option value="option90">AMORTIZACION</option><option value="option91">EDIT BANK</option><option value="option92">EMPLOYEE BREAK</option><option value="option93">PUERTA BOVEDA ESTA ABIERTA</option><option value="option94">EXCHANGE</option><option value="option95">CANCELACION</option><option value="option96">COLOCACION</option><option value="option97">COMPRA</option><option value="option98">EMPLOYEE DISCOUNT</option><option value="option99">DINERO PROVAL INGRESADO</option><option value="option100">HORA ALARMA ACTIVADA</option><option value="option101">HORA APERTURA BOVEDA</option><option value="option102">HORA ALARMA DEACTIVADA</option><option value="option103">HORA APERTURA PUERTA</option><option value="option104">HORA FINALIZAZION SISTEMA</option><option value="option105">HORA INICIO SISTEMA</option><option value="option106">EMPLOYEE LOGON</option><option value="option107">EXIT SECURE MODE</option><option value="option108">EMPRESTIMO</option><option value="option109">EYESON ALERT</option><option value="option110">EMPLOYEE LOGOFF</option><option value="option111">OP. ANULADA</option><option value="option112">OP. NO EFECTUADA</option><option value="option113">OP. NO REGISTRADA</option><option value="option114">PAGO INTERES</option><option value="option115">RECOLOCACION</option><option value="option116">RENOVACION</option><option value="option117">REVOLVING</option><option value="option118">ENTER SECURE MODE</option><option value="option119">ESTORNO</option><option value="option120">EXIT POS</option><option value="option121">EXTRATO</option><option value="option122">FABRICATION</option><option value="option123">COMPLIMENTARY</option><option value="option124">FS CHAGNE</option><option value="option125">FLOAT IN</option><option value="option126">ADD FLOAT/LOAN</option><option value="option127">FIRE ORDER</option><option value="option128">FLOAT OUT</option><option value="option129">FOODSTAMPS</option><option value="option130">FS TOTAL</option><option value="option131">PREPAID GAS</option><option value="option132">GATE CLOSED</option><option value="option133">GATE LEFT OPEN</option><option value="option134">GATE OPEN</option><option value="option135">GIFT CARD</option><option value="option136">GIFT CERTIFICATES</option><option value="option137">GUARDHOUSE CLOSED</option><option value="option138">GUARDHOUSE OPEN</option><option value="option139">GENERAL ADJUSTMENT</option><option value="option140">GAS PREPAID</option><option value="option141">GAS REFUND</option><option value="option142">GUEST/TASTE/CHANGE</option><option value="option143">ITEM COUNT</option><option value="option144">ISSUE CREDIT</option><option value="option145">ITEM DISCOUNT</option><option value="option146">IN-HOUSE CHARGE TENDER</option><option value="option147">INFO MESSAGE</option><option value="option148">ITEM IN CASE</option><option value="option149">ITEM MODIFY</option><option value="option150">INACTIVE CARD</option><option value="option151">ITEM OUT OF CASE</option><option value="option152">INVALID FINGERPRINT</option><option value="option153">ITEM REMOVE</option><option value="option154"></option><option value="option155"></option><option value="option156">INVALID READER</option><option value="option157">JOB STARTED</option><option value="option158">JOIN TABLE/TAB</option><option value="option159">APPRAISAL ADJUST</option><option value="option160">APPRAISAL CANCEL</option><option value="option161">APPRAISAL PICKUP</option><option value="option162">APPRAISAL PAYMENT</option><option value="option163">APPRAISAL START</option><option value="option164">STORECHARGE ADJUST</option><option value="option165">STORECHARGE PAYMENT</option><option value="option166">CUSTOMER INFO UPDATE</option><option value="option167">CUSTOM ADJUST</option><option value="option168">CUSTOM CANCEL</option><option value="option169">CUSTOM PICKUP</option><option value="option170">CUSTOM PAYMENT</option><option value="option171">CUSTOM QUICK</option><option value="option172">CUSTOM START</option><option value="option173">DONATE</option><option value="option174">DONATE RETURN</option><option value="option175">RESTOCKINGFEE</option><option value="option176">GIVEAWAY</option><option value="option177">GIVEAWAY RETURN</option><option value="option178">LAYAWAY ADJUST</option><option value="option179">LAYAWAY APPLY</option><option value="option180">LAYAWAY CANCEL</option><option value="option181">LAYAWAY CREATE</option><option value="option182">LAYAWAY PICKUP</option><option value="option183"></option><option value="option184">LAYAWAY START</option><option value="option185">MEMO ADJUST</option><option value="option186">MEMO CANCEL</option><option value="option187">MEMO CREATE</option><option value="option188">MEMO DEPOSIT</option><option value="option189">MEMO PICKUP</option><option value="option190">MEMO PAYMENT</option><option value="option191">MEMO START</option><option value="option192">REPAIR ADJUST</option><option value="option193">REPAIR CANCEL</option><option value="option194">REPAIR INTAKE</option><option value="option195">REPAIR PICKUP</option><option value="option196">REPAIR PAYMENT</option><option value="option197">REPAIR QUICK</option><option value="option198">REWARD ACTIVATE</option><option value="option199">REWARD ADJUST</option><option value="option200">REWARD USED</option><option value="option201">STORE CREDIT ADJUST</option><option value="option202">STORE CREDIT CONSIGNMENT</option><option value="option203">STORE CREDIT GRANTED</option><option value="option204">BUY</option><option value="option205">SALE GIFT CARD</option><option value="option206">SALE GIFT CERTIFICATE</option><option value="option207">SALE MERCHANDISE</option><option value="option208">SALE MISCELLANEOUS</option><option value="option209">SHIPPING</option><option value="option210">SPECIAL ORDER ADJUST</option><option value="option211">SPECIAL ORDER APPLY</option><option value="option212">SPECIAL ORDER CANCEL</option><option value="option213">SPECIAL ORDER CREATE</option><option value="option214">SPECIAL ORDER DEPOSIT</option><option value="option215">SPECIAL ORDER PICKUP</option><option value="option216">SPECIAL ORDER PAYMENT</option><option value="option217">SPECIAL ORDER START</option><option value="option218">TENDER CASH</option><option value="option219">TENDER CC</option><option value="option220">TENDER CHECK</option><option value="option221">TENDER GIFT CARD</option><option value="option222">TENDER GIFT CERTIFICATE</option><option value="option223">TENDER STORE CREDIT</option><option value="option224">TENDER STORE CHARGE</option><option value="option225">TRADE</option><option value="option226">ADD TO WISH LIST</option><option value="option227">REMOVE FROM WISH LIST</option><option value="option228">CHANGE KITCHEN ROUTING</option><option value="option229">KITCHEN ERROR</option><option value="option230">LAYAWAY</option><option value="option231">CHANGED LOAN AMOUNT</option><option value="option232">LARGE LOAN</option><option value="option233">LOTTERY PAYMENT</option><option value="option234">LAYAWAY PAYMENT</option><option value="option235">LOTTERY PD</option><option value="option236">LOTTERY PAID OUT</option><option value="option237">LOTTERY SALE</option><option value="option238">ITEM EXIT LOCATION</option><option value="option239">LAYAWAY</option><option value="option240">LOTTO WIN</option><option value="option241">LONG WAIT TIME</option><option value="option242">MODIFY ITEM</option><option value="option243">MEMBER CARD ENTRY</option><option value="option244">MANAGER MEALS</option><option value="option245">MANAGER OPERATIONS</option><option value="option246">MODIFY INVENTORY ITEM</option><option value="option247">MISSING ITEM ALERT</option><option value="option248">MISSING ITEM RECOVERY</option><option value="option249">MASS MILLION P/O</option><option value="option250">MODIFY INVENTORY ITEM</option><option value="option251">MISRING NOT MADE</option><option value="option252">MEDIA SWAP</option><option value="option253">MISC TENDER</option><option value="option254">MULTIPLIER</option><option value="option255">MOVE ITEM</option><option value="option256">NON-CASH TENDERED</option><option value="option257">GUESTS</option><option value="option258"></option><option value="option259">NO MAKE</option><option value="option260">NONE</option><option value="option261">NO SALE</option><option value="option262">NEW SEAT</option><option value="option263">NEG TAX</option><option value="option264">OPEN DEPARTMENT ENTRY</option><option value="option265">ORDER ITEM</option><option value="option266">ORDER SERVED</option><option value="option267">No Description</option><option value="option268">OUT OF STOCK</option><option value="option269">OVERRIDE</option><option value="option270">OVERRING</option><option value="option271">PLU DISCOUNT AMOUNT</option><option value="option272">POSTBILL</option><option value="option273">PLU COUPON</option><option value="option274">PUMP-OUTDOOR CANCEL</option><option value="option275">PUNCH IN</option><option value="option276">PUNCH OUT</option><option value="option277">PULL PAWNS OR BUYS</option><option value="option278">PGTO DARF</option><option value="option279">PAID IN</option><option value="option280">PLU DELETE ITEM</option><option value="option281">PAGFACIL</option><option value="option282">PGTO GPS</option><option value="option283">PICKUP FIREARM</option><option value="option284">NEW PAWN</option><option value="option285">PEDESTRIAN IN</option><option value="option286">PLU ITEM SALE</option><option value="option287">PICKUP</option><option value="option288">PRICE LOOKUP</option><option value="option289">PICK LOAN</option><option value="option290">PROMOTIONS</option><option value="option291">PAID OUT</option><option value="option292">PEDESTRIAN OUT</option><option value="option293">PAWN PAYMENT PAYS OR REDEEMS</option><option value="option294">PUMP-PREAUTH</option><option value="option295">P REPORT</option><option value="option296">PRINT CHECK</option><option value="option297">PUMP-OUTDOOR SALE</option><option value="option298">PGTO TRIBUTO</option><option value="option299">PGTOTITULO</option><option value="option300">QUICK CASH JOURNAL ENTRY</option><option value="option301">QUICK HISTORY CHANGE</option><option value="option302">QUICK PAWN MODIFY LOAN</option><option value="option303">QUICK PAWN NEW LOAN</option><option value="option304">QUICK REPAIR CHANGED IN QUICKR</option><option value="option305">QUICK STOCK ENTRY</option><option value="option306">RCVD ON ACCT</option><option value="option307">REBOOT</option><option value="option308">REDEEM DISCREPANCY IN OLDPAW</option><option value="option309">RECARGA</option><option value="option310">RAINCHECK</option><option value="option311">RECEIPT</option><option value="option312">RECEIVING</option><option value="option313">REEDEM LOAN</option><option value="option314">REPRINT PAWN TICKET</option><option value="option315">REFUND</option><option value="option316">VOID SERVICE CHARGE</option><option value="option317">GENERATE REPORT</option><option value="option318">REPAIR SALE</option><option value="option319">RESIDENT IN</option><option value="option320">REFUND ITEM</option><option value="option321">SEND INV ITEM OUT FOR REPAIR</option><option value="option322">RECALL ORDER</option><option value="option323">REOPEN CHECK</option><option value="option324">RESIDENT OUT</option><option value="option325">REPAWN LOAN</option><option value="option326">RETURN PAID OUT</option><option value="option327">REPORT</option><option value="option328">RESET A DEVICE</option><option value="option329">RESTART REGISTER</option><option value="option330">RETURN</option><option value="option331">REMOVETRAININGTRANS</option><option value="option332">REWRITE LOAN</option><option value="option333">SALE</option><option value="option334">STARTING BANK</option><option value="option335">SOLD BELOW GOLD COST OR COST</option><option value="option336">SPLIT CHECK</option><option value="option337">SECURITYCHECK</option><option value="option338">SCALE</option><option value="option339">SAQUE CARTÃO</option><option value="option340">SAFE DROP</option><option value="option341">STORE ITEM</option><option value="option342">SEALED LOAN SET</option><option value="option343">SALDO</option><option value="option344">FREQUENT SHOPPER NUMBER ENTRY</option><option value="option345">SAVE ORDER</option><option value="option346">SEND ORDER</option><option value="option347">STOP TRAINING MODE</option><option value="option348">SAMPLING</option><option value="option349">SAQUE COM REC. RETIR.</option><option value="option350">SERVER ERROR</option><option value="option351">SELECT SEAT</option><option value="option352">SUBTOTAL</option><option value="option353">SUSPEND TRANSACTION</option><option value="option354">TAXABLE AMT</option><option value="option355">TAILGATING</option><option value="option356">TENDER CORRECTION</option><option value="option357">TIME AND DATE CHANGE</option><option value="option358">TRANSFER TABLE DETAIL</option><option value="option359">TRANSFERÊNCIA ENTRE CONTAS</option><option value="option360">TRANSFER</option><option value="option361">CURRENT TIME</option><option value="option362">TICKET</option><option value="option363">TICKET TIME</option><option value="option364">COMPUTER BASED TRAIN</option><option value="option365">TOTAL RETURN</option><option value="option366">TRAINING MEAL</option><option value="option367">TRANSFER A TABLE</option><option value="option368">TOTAL</option><option value="option369">CASHIERTT</option><option value="option370">TAX</option><option value="option371">TAX EXEMPT</option><option value="option372">UNDEFINED CARD</option><option value="option373">UNRECOGNIZED FINGERPRINT</option><option value="option374">UNKNOWN</option><option value="option375">UNVOID ITEM</option><option value="option376">VOID BUY</option><option value="option377">VOID COUPON</option><option value="option378">VOID CHECK</option><option value="option379">ERROR CORRECT</option><option value="option380">REMOVE DISCOUNT</option><option value="option381">VDU BUMP</option><option value="option382">VEHICLE AT GUARDHOUSE</option><option value="option383">VEHICLE LEFT GUARDHOUSE</option><option value="option384">PAWN GUARD DRAWER FORCED OPEN IN PNGMNU</option><option value="option385">VOID GIFT CARD</option><option value="option386">VISITOR COUNTER IN</option><option value="option387">VOIDED LOAN</option><option value="option388">VISITOR COUNTER OUT</option><option value="option389">VOID ORDER</option><option value="option390">VALID FINGERPRINT</option><option value="option391">VOID PAYMENT</option><option value="option392">VOID</option><option value="option393">WEIGHT CHECK</option><option value="option394">WEIGHT</option><option value="option395">WALK OUT</option><option value="option396">AUTH BY</option><option value="option397">WASTE</option><option value="option398">WRONG TIME</option><option value="option399">X1 REPORT</option><option value="option400">X1 REPORT TIME</option><option value="option401">X2 REPORT</option><option value="option402">X2 REPORT TIME</option><option value="option403">EXIT SAFE DROP</option><option value="option404">X-READ REPORT</option><option value="option405">EXTRA LARGE TRANSACTION</option><option value="option406">Z1 REPORT</option><option value="option407">Z1 REPORT TIME</option><option value="option408">Z2 REPORT</option><option value="option409">Z2 REPORT TIME</option></select> <span class="info-container"> <span class="info">Showing all 409</span> <button type="button" class="btn clear1 pull-right btn-default btn-xs">show all</button> </span> </div> <div class="box2 col-md-6"> <label for="bootstrap-duallistbox-selected-list_" style="display: none;"></label> <input class="filter form-control" type="text" placeholder="Filter"> <div class="btn-group buttons"> <button type="button" class="btn remove btn-default" title="Remove selected"> <i class="icon-arrow-left22"></i> </button> <button type="button" class="btn removeall btn-default" title="Remove all"> <i class="icon-arrow-left22"></i> <i class="icon-arrow-left22"></i> </button> </div> <select multiple="multiple" id="bootstrap-duallistbox-selected-list_" class="form-control" name="_helper2" style="height: 216.222px;"></select> <span class="info-container"> <span class="info">Empty list</span> <button type="button" class="btn clear2 pull-right btn-default btn-xs">show all</button> </span> </div></div><select multiple="multiple" class="form-control listbox" style="display: none;">
-                                    <option value="option1">ACCEPT TABLE</option>
-                                    <option value="option2">ABERTURA DE CONTA</option>
-                                    <option value="option3">PUERTA CAJA ESTA ABIERTA</option>
-                                    <option value="option4">ACCESS CARD USED</option>
-                                    <option value="option5">ADDITION</option>
-                                    <option value="option6">ADJUST CHECK</option>
-                                    <option value="option7">ADD GRATUITY</option>
-                                    <option value="option8">ADJUST PAYMENT</option>
-                                    <option value="option9">ADD MEMBER POINTS</option>
-                                    <option value="option10">ALARM ACTIVE</option>
-                                    <option value="option11">ALARM NORMAL</option>
-                                    <option value="option12">CASH TENDERED</option>
-                                    <option value="option13">ACCRUED PAYMENT</option>
-                                    <option value="option14">ATTACH CLUB MEMBER</option>
-                                    <option value="option15">AUTHORIZED</option>
-                                    <option value="option16">BANKS OR SKIMS</option>
-                                    <option value="option17">BEGIN CASH</option>
-                                    <option value="option18">BALANCE DUE</option>
-                                    <option value="option19">BAL FWD</option>
-                                    <option value="option20">BREAKIN</option>
-                                    <option value="option21">BREAKOUT</option>
-                                    <option value="option22">BOTTLE RETURN</option>
-                                    <option value="option23">BUT/UFO</option>
-                                    <option value="option24">NEW BUY</option>
-                                    <option value="option25">CASH ADVANCE</option>
-                                    <option value="option26">CLEAR ALL</option>
-                                    <option value="option27">CASE CLOSED</option>
-                                    <option value="option28">CASE LEFT OPEN</option>
-                                    <option value="option29">CASE OPEN</option>
-                                    <option value="option30">CUSTOMER AT CASE</option>
-                                    <option value="option31">CUSTOMER AT DISPLAY</option>
-                                    <option value="option32">CUSTOMER AT DRIVE UP</option>
-                                    <option value="option33">CUST AT REGISTER</option>
-                                    <option value="option34">GC BAL</option>
-                                    <option value="option35">CREDIT CARD TENDERED</option>
-                                    <option value="option36">CANCEL CHANGES</option>
-                                    <option value="option37">CASH DROP</option>
-                                    <option value="option38">COLD/DROP FOOD</option>
-                                    <option value="option39">COUPON FINISH</option>
-                                    <option value="option40">CHARGE ACCT</option>
-                                    <option value="option41">CHANGE</option>
-                                    <option value="option42">ITEM ENTER LOCATION</option>
-                                    <option value="option43">CHECK TENDERED</option>
-                                    <option value="option44">CHECK CASHED</option>
-                                    <option value="option45">LOGIN</option>
-                                    <option value="option46">CUSTOMER LEFT CASE</option>
-                                    <option value="option47">CUSTOMER LEFT DISPLAY</option>
-                                    <option value="option48">CUSTOMER LEFT DRIVE UP</option>
-                                    <option value="option49">CUST LEFT REGISTER</option>
-                                    <option value="option50">CLICKER PRESSED</option>
-                                    <option value="option51">CLOSE TABLE</option>
-                                    <option value="option52">MFR COUPON</option>
-                                    <option value="option53">COMBINE CHECK</option>
-                                    <option value="option54">COUPON PAIDOUT</option>
-                                    <option value="option55">COUPON</option>
-                                    <option value="option56">ALTERAÇÃO DE SENHA</option>
-                                    <option value="option57">PAYMENT</option>
-                                    <option value="option58">CLIENT CREDIT CHANGED</option>
-                                    <option value="option59">CREATE NEW ITEM</option>
-                                    <option value="option60">CARD TROUBLE</option>
-                                    <option value="option61">CLEAR SPLIT</option>
-                                    <option value="option62">CUSTOMER IN FITTING ROOM</option>
-                                    <option value="option63">CUSTOMER OUT FITTING ROOM</option>
-                                    <option value="option64">CLOSETRANSACT</option>
-                                    <option value="option65">CLEAR TOTALS</option>
-                                    <option value="option66">EBT CASH WITHDRAWAL</option>
-                                    <option value="option67"></option>
-                                    <option value="option68">DELETE ADVANCE</option>
-                                    <option value="option69">DEBIT CARD TENDERED</option>
-                                    <option value="option70">DRAWER CLOSED</option>
-                                    <option value="option71">DRAWER CASH</option>
-                                    <option value="option72">DESBLOQUEIO CHEQUES</option>
-                                    <option value="option73">DOOR CLOSED</option>
-                                    <option value="option74"></option>
-                                    <option value="option75">DRAWER FOODSTAMP</option>
-                                    <option value="option76">DOOR FORCED OPEN</option>
-                                    <option value="option77">DISCOUNT</option>
-                                    <option value="option78">STARTING TILL FUND</option>
-                                    <option value="option79">DOOR LEFT OPEN</option>
-                                    <option value="option80">DRAWER OPENED</option>
-                                    <option value="option81">DOOR OPEN</option>
-                                    <option value="option82">DEPOSIT</option>
-                                    <option value="option83">DEPOSITO IDENTIFICADO</option>
-                                    <option value="option84">DEPOSITO</option>
-                                    <option value="option85">DEPOSIT RETURN</option>
-                                    <option value="option86">DISCOUNT PERCENT</option>
-                                    <option value="option87">DELETE SERVICE</option>
-                                    <option value="option88">DRAWER LEFT OPEN</option>
-                                    <option value="option89">EMPADJUSTMENT</option>
-                                    <option value="option90">AMORTIZACION</option>
-                                    <option value="option91">EDIT BANK</option>
-                                    <option value="option92">EMPLOYEE BREAK</option>
-                                    <option value="option93">PUERTA BOVEDA ESTA ABIERTA</option>
-                                    <option value="option94">EXCHANGE</option>
-                                    <option value="option95">CANCELACION</option>
-                                    <option value="option96">COLOCACION</option>
-                                    <option value="option97">COMPRA</option>
-                                    <option value="option98">EMPLOYEE DISCOUNT</option>
-                                    <option value="option99">DINERO PROVAL INGRESADO</option>
-                                    <option value="option100">HORA ALARMA ACTIVADA</option>
-                                    <option value="option101">HORA APERTURA BOVEDA</option>
-                                    <option value="option102">HORA ALARMA DEACTIVADA</option>
-                                    <option value="option103">HORA APERTURA PUERTA</option>
-                                    <option value="option104">HORA FINALIZAZION SISTEMA</option>
-                                    <option value="option105">HORA INICIO SISTEMA</option>
-                                    <option value="option106">EMPLOYEE LOGON</option>
-                                    <option value="option107">EXIT SECURE MODE</option>
-                                    <option value="option108">EMPRESTIMO</option>
-                                    <option value="option109">EYESON ALERT</option>
-                                    <option value="option110">EMPLOYEE LOGOFF</option>
-                                    <option value="option111">OP. ANULADA</option>
-                                    <option value="option112">OP. NO EFECTUADA</option>
-                                    <option value="option113">OP. NO REGISTRADA</option>
-                                    <option value="option114">PAGO INTERES</option>
-                                    <option value="option115">RECOLOCACION</option>
-                                    <option value="option116">RENOVACION</option>
-                                    <option value="option117">REVOLVING</option>
-                                    <option value="option118">ENTER SECURE MODE</option>
-                                    <option value="option119">ESTORNO</option>
-                                    <option value="option120">EXIT POS</option>
-                                    <option value="option121">EXTRATO</option>
-                                    <option value="option122">FABRICATION</option>
-                                    <option value="option123">COMPLIMENTARY</option>
-                                    <option value="option124">FS CHAGNE</option>
-                                    <option value="option125">FLOAT IN</option>
-                                    <option value="option126">ADD FLOAT/LOAN</option>
-                                    <option value="option127">FIRE ORDER</option>
-                                    <option value="option128">FLOAT OUT</option>
-                                    <option value="option129">FOODSTAMPS</option>
-                                    <option value="option130">FS TOTAL</option>
-                                    <option value="option131">PREPAID GAS</option>
-                                    <option value="option132">GATE CLOSED</option>
-                                    <option value="option133">GATE LEFT OPEN</option>
-                                    <option value="option134">GATE OPEN</option>
-                                    <option value="option135">GIFT CARD</option>
-                                    <option value="option136">GIFT CERTIFICATES</option>
-                                    <option value="option137">GUARDHOUSE CLOSED</option>
-                                    <option value="option138">GUARDHOUSE OPEN</option>
-                                    <option value="option139">GENERAL ADJUSTMENT</option>
-                                    <option value="option140">GAS PREPAID</option>
-                                    <option value="option141">GAS REFUND</option>
-                                    <option value="option142">GUEST/TASTE/CHANGE</option>
-                                    <option value="option143">ITEM COUNT</option>
-                                    <option value="option144">ISSUE CREDIT</option>
-                                    <option value="option145">ITEM DISCOUNT</option>
-                                    <option value="option146">IN-HOUSE CHARGE TENDER</option>
-                                    <option value="option147">INFO MESSAGE</option>
-                                    <option value="option148">ITEM IN CASE</option>
-                                    <option value="option149">ITEM MODIFY</option>
-                                    <option value="option150">INACTIVE CARD</option>
-                                    <option value="option151">ITEM OUT OF CASE</option>
-                                    <option value="option152">INVALID FINGERPRINT</option>
-                                    <option value="option153">ITEM REMOVE</option>
-                                    <option value="option154"></option>
-                                    <option value="option155"></option>
-                                    <option value="option156">INVALID READER</option>
-                                    <option value="option157">JOB STARTED</option>
-                                    <option value="option158">JOIN TABLE/TAB</option>
-                                    <option value="option159">APPRAISAL ADJUST</option>
-                                    <option value="option160">APPRAISAL CANCEL</option>
-                                    <option value="option161">APPRAISAL PICKUP</option>
-                                    <option value="option162">APPRAISAL PAYMENT</option>
-                                    <option value="option163">APPRAISAL START</option>
-                                    <option value="option164">STORECHARGE ADJUST</option>
-                                    <option value="option165">STORECHARGE PAYMENT</option>
-                                    <option value="option166">CUSTOMER INFO UPDATE</option>
-                                    <option value="option167">CUSTOM ADJUST</option>
-                                    <option value="option168">CUSTOM CANCEL</option>
-                                    <option value="option169">CUSTOM PICKUP</option>
-                                    <option value="option170">CUSTOM PAYMENT</option>
-                                    <option value="option171">CUSTOM QUICK</option>
-                                    <option value="option172">CUSTOM START</option>
-                                    <option value="option173">DONATE</option>
-                                    <option value="option174">DONATE RETURN</option>
-                                    <option value="option175">RESTOCKINGFEE</option>
-                                    <option value="option176">GIVEAWAY</option>
-                                    <option value="option177">GIVEAWAY RETURN</option>
-                                    <option value="option178">LAYAWAY ADJUST</option>
-                                    <option value="option179">LAYAWAY APPLY</option>
-                                    <option value="option180">LAYAWAY CANCEL</option>
-                                    <option value="option181">LAYAWAY CREATE</option>
-                                    <option value="option182">LAYAWAY PICKUP</option>
-                                    <option value="option183"></option>
-                                    <option value="option184">LAYAWAY START</option>
-                                    <option value="option185">MEMO ADJUST</option>
-                                    <option value="option186">MEMO CANCEL</option>
-                                    <option value="option187">MEMO CREATE</option>
-                                    <option value="option188">MEMO DEPOSIT</option>
-                                    <option value="option189">MEMO PICKUP</option>
-                                    <option value="option190">MEMO PAYMENT</option>
-                                    <option value="option191">MEMO START</option>
-                                    <option value="option192">REPAIR ADJUST</option>
-                                    <option value="option193">REPAIR CANCEL</option>
-                                    <option value="option194">REPAIR INTAKE</option>
-                                    <option value="option195">REPAIR PICKUP</option>
-                                    <option value="option196">REPAIR PAYMENT</option>
-                                    <option value="option197">REPAIR QUICK</option>
-                                    <option value="option198">REWARD ACTIVATE</option>
-                                    <option value="option199">REWARD ADJUST</option>
-                                    <option value="option200">REWARD USED</option>
-                                    <option value="option201">STORE CREDIT ADJUST</option>
-                                    <option value="option202">STORE CREDIT CONSIGNMENT</option>
-                                    <option value="option203">STORE CREDIT GRANTED</option>
-                                    <option value="option204">BUY</option>
-                                    <option value="option205">SALE GIFT CARD</option>
-                                    <option value="option206">SALE GIFT CERTIFICATE</option>
-                                    <option value="option207">SALE MERCHANDISE</option>
-                                    <option value="option208">SALE MISCELLANEOUS</option>
-                                    <option value="option209">SHIPPING</option>
-                                    <option value="option210">SPECIAL ORDER ADJUST</option>
-                                    <option value="option211">SPECIAL ORDER APPLY</option>
-                                    <option value="option212">SPECIAL ORDER CANCEL</option>
-                                    <option value="option213">SPECIAL ORDER CREATE</option>
-                                    <option value="option214">SPECIAL ORDER DEPOSIT</option>
-                                    <option value="option215">SPECIAL ORDER PICKUP</option>
-                                    <option value="option216">SPECIAL ORDER PAYMENT</option>
-                                    <option value="option217">SPECIAL ORDER START</option>
-                                    <option value="option218">TENDER CASH</option>
-                                    <option value="option219">TENDER CC</option>
-                                    <option value="option220">TENDER CHECK</option>
-                                    <option value="option221">TENDER GIFT CARD</option>
-                                    <option value="option222">TENDER GIFT CERTIFICATE</option>
-                                    <option value="option223">TENDER STORE CREDIT</option>
-                                    <option value="option224">TENDER STORE CHARGE</option>
-                                    <option value="option225">TRADE</option>
-                                    <option value="option226">ADD TO WISH LIST</option>
-                                    <option value="option227">REMOVE FROM WISH LIST</option>
-                                    <option value="option228">CHANGE KITCHEN ROUTING</option>
-                                    <option value="option229">KITCHEN ERROR</option>
-                                    <option value="option230">LAYAWAY</option>
-                                    <option value="option231">CHANGED LOAN AMOUNT</option>
-                                    <option value="option232">LARGE LOAN</option>
-                                    <option value="option233">LOTTERY PAYMENT</option>
-                                    <option value="option234">LAYAWAY PAYMENT</option>
-                                    <option value="option235">LOTTERY PD</option>
-                                    <option value="option236">LOTTERY PAID OUT</option>
-                                    <option value="option237">LOTTERY SALE</option>
-                                    <option value="option238">ITEM EXIT LOCATION</option>
-                                    <option value="option239">LAYAWAY</option>
-                                    <option value="option240">LOTTO WIN</option>
-                                    <option value="option241">LONG WAIT TIME</option>
-                                    <option value="option242">MODIFY ITEM</option>
-                                    <option value="option243">MEMBER CARD ENTRY</option>
-                                    <option value="option244">MANAGER MEALS</option>
-                                    <option value="option245">MANAGER OPERATIONS</option>
-                                    <option value="option246">MODIFY INVENTORY ITEM</option>
-                                    <option value="option247">MISSING ITEM ALERT</option>
-                                    <option value="option248">MISSING ITEM RECOVERY</option>
-                                    <option value="option249">MASS MILLION P/O</option>
-                                    <option value="option250">MODIFY INVENTORY ITEM</option>
-                                    <option value="option251">MISRING NOT MADE</option>
-                                    <option value="option252">MEDIA SWAP</option>
-                                    <option value="option253">MISC TENDER</option>
-                                    <option value="option254">MULTIPLIER</option>
-                                    <option value="option255">MOVE ITEM</option>
-                                    <option value="option256">NON-CASH TENDERED</option>
-                                    <option value="option257">GUESTS</option>
-                                    <option value="option258"></option>
-                                    <option value="option259">NO MAKE</option>
-                                    <option value="option260">NONE</option>
-                                    <option value="option261">NO SALE</option>
-                                    <option value="option262">NEW SEAT</option>
-                                    <option value="option263">NEG TAX</option>
-                                    <option value="option264">OPEN DEPARTMENT ENTRY</option>
-                                    <option value="option265">ORDER ITEM</option>
-                                    <option value="option266">ORDER SERVED</option>
-                                    <option value="option267">No Description</option>
-                                    <option value="option268">OUT OF STOCK</option>
-                                    <option value="option269">OVERRIDE</option>
-                                    <option value="option270">OVERRING</option>
-                                    <option value="option271">PLU DISCOUNT AMOUNT</option>
-                                    <option value="option272">POSTBILL</option>
-                                    <option value="option273">PLU COUPON</option>
-                                    <option value="option274">PUMP-OUTDOOR CANCEL</option>
-                                    <option value="option275">PUNCH IN</option>
-                                    <option value="option276">PUNCH OUT</option>
-                                    <option value="option277">PULL PAWNS OR BUYS</option>
-                                    <option value="option278">PGTO DARF</option>
-                                    <option value="option279">PAID IN</option>
-                                    <option value="option280">PLU DELETE ITEM</option>
-                                    <option value="option281">PAGFACIL</option>
-                                    <option value="option282">PGTO GPS</option>
-                                    <option value="option283">PICKUP FIREARM</option>
-                                    <option value="option284">NEW PAWN</option>
-                                    <option value="option285">PEDESTRIAN IN</option>
-                                    <option value="option286">PLU ITEM SALE</option>
-                                    <option value="option287">PICKUP</option>
-                                    <option value="option288">PRICE LOOKUP</option>
-                                    <option value="option289">PICK LOAN</option>
-                                    <option value="option290">PROMOTIONS</option>
-                                    <option value="option291">PAID OUT</option>
-                                    <option value="option292">PEDESTRIAN OUT</option>
-                                    <option value="option293">PAWN PAYMENT PAYS OR REDEEMS</option>
-                                    <option value="option294">PUMP-PREAUTH</option>
-                                    <option value="option295">P REPORT</option>
-                                    <option value="option296">PRINT CHECK</option>
-                                    <option value="option297">PUMP-OUTDOOR SALE</option>
-                                    <option value="option298">PGTO TRIBUTO</option>
-                                    <option value="option299">PGTOTITULO</option>
-                                    <option value="option300">QUICK CASH JOURNAL ENTRY</option>
-                                    <option value="option301">QUICK HISTORY CHANGE</option>
-                                    <option value="option302">QUICK PAWN MODIFY LOAN</option>
-                                    <option value="option303">QUICK PAWN NEW LOAN</option>
-                                    <option value="option304">QUICK REPAIR CHANGED IN QUICKR</option>
-                                    <option value="option305">QUICK STOCK ENTRY</option>
-                                    <option value="option306">RCVD ON ACCT</option>
-                                    <option value="option307">REBOOT</option>
-                                    <option value="option308">REDEEM DISCREPANCY IN OLDPAW</option>
-                                    <option value="option309">RECARGA</option>
-                                    <option value="option310">RAINCHECK</option>
-                                    <option value="option311">RECEIPT</option>
-                                    <option value="option312">RECEIVING</option>
-                                    <option value="option313">REEDEM LOAN</option>
-                                    <option value="option314">REPRINT PAWN TICKET</option>
-                                    <option value="option315">REFUND</option>
-                                    <option value="option316">VOID SERVICE CHARGE</option>
-                                    <option value="option317">GENERATE REPORT</option>
-                                    <option value="option318">REPAIR SALE</option>
-                                    <option value="option319">RESIDENT IN</option>
-                                    <option value="option320">REFUND ITEM</option>
-                                    <option value="option321">SEND INV ITEM OUT FOR REPAIR</option>
-                                    <option value="option322">RECALL ORDER</option>
-                                    <option value="option323">REOPEN CHECK</option>
-                                    <option value="option324">RESIDENT OUT</option>
-                                    <option value="option325">REPAWN LOAN</option>
-                                    <option value="option326">RETURN PAID OUT</option>
-                                    <option value="option327">REPORT</option>
-                                    <option value="option328">RESET A DEVICE</option>
-                                    <option value="option329">RESTART REGISTER</option>
-                                    <option value="option330">RETURN</option>
-                                    <option value="option331">REMOVETRAININGTRANS</option>
-                                    <option value="option332">REWRITE LOAN</option>
-                                    <option value="option333">SALE</option>
-                                    <option value="option334">STARTING BANK</option>
-                                    <option value="option335">SOLD BELOW GOLD COST OR COST</option>
-                                    <option value="option336">SPLIT CHECK</option>
-                                    <option value="option337">SECURITYCHECK</option>
-                                    <option value="option338">SCALE</option>
-                                    <option value="option339">SAQUE CARTÃO</option>
-                                    <option value="option340">SAFE DROP</option>
-                                    <option value="option341">STORE ITEM</option>
-                                    <option value="option342">SEALED LOAN SET</option>
-                                    <option value="option343">SALDO</option>
-                                    <option value="option344">FREQUENT SHOPPER NUMBER ENTRY</option>
-                                    <option value="option345">SAVE ORDER</option>
-                                    <option value="option346">SEND ORDER</option>
-                                    <option value="option347">STOP TRAINING MODE</option>
-                                    <option value="option348">SAMPLING</option>
-                                    <option value="option349">SAQUE COM REC. RETIR.</option>
-                                    <option value="option350">SERVER ERROR</option>
-                                    <option value="option351">SELECT SEAT</option>
-                                    <option value="option352">SUBTOTAL</option>
-                                    <option value="option353">SUSPEND TRANSACTION</option>
-                                    <option value="option354">TAXABLE AMT</option>
-                                    <option value="option355">TAILGATING</option>
-                                    <option value="option356">TENDER CORRECTION</option>
-                                    <option value="option357">TIME AND DATE CHANGE</option>
-                                    <option value="option358">TRANSFER TABLE DETAIL</option>
-                                    <option value="option359">TRANSFERÊNCIA ENTRE CONTAS</option>
-                                    <option value="option360">TRANSFER</option>
-                                    <option value="option361">CURRENT TIME</option>
-                                    <option value="option362">TICKET</option>
-                                    <option value="option363">TICKET TIME</option>
-                                    <option value="option364">COMPUTER BASED TRAIN</option>
-                                    <option value="option365">TOTAL RETURN</option>
-                                    <option value="option366">TRAINING MEAL</option>
-                                    <option value="option367">TRANSFER A TABLE</option>
-                                    <option value="option368">TOTAL</option>
-                                    <option value="option369">CASHIERTT</option>
-                                    <option value="option370">TAX</option>
-                                    <option value="option371">TAX EXEMPT</option>
-                                    <option value="option372">UNDEFINED CARD</option>
-                                    <option value="option373">UNRECOGNIZED FINGERPRINT</option>
-                                    <option value="option374">UNKNOWN</option>
-                                    <option value="option375">UNVOID ITEM</option>
-                                    <option value="option376">VOID BUY</option>
-                                    <option value="option377">VOID COUPON</option>
-                                    <option value="option378">VOID CHECK</option>
-                                    <option value="option379">ERROR CORRECT</option>
-                                    <option value="option380">REMOVE DISCOUNT</option>
-                                    <option value="option381">VDU BUMP</option>
-                                    <option value="option382">VEHICLE AT GUARDHOUSE</option>
-                                    <option value="option383">VEHICLE LEFT GUARDHOUSE</option>
-                                    <option value="option384">PAWN GUARD DRAWER FORCED OPEN IN PNGMNU</option>
-                                    <option value="option385">VOID GIFT CARD</option>
-                                    <option value="option386">VISITOR COUNTER IN</option>
-                                    <option value="option387">VOIDED LOAN</option>
-                                    <option value="option388">VISITOR COUNTER OUT</option>
-                                    <option value="option389">VOID ORDER</option>
-                                    <option value="option390">VALID FINGERPRINT</option>
-                                    <option value="option391">VOID PAYMENT</option>
-                                    <option value="option392">VOID</option>
-                                    <option value="option393">WEIGHT CHECK</option>
-                                    <option value="option394">WEIGHT</option>
-                                    <option value="option395">WALK OUT</option>
-                                    <option value="option396">AUTH BY</option>
-                                    <option value="option397">WASTE</option>
-                                    <option value="option398">WRONG TIME</option>
-                                    <option value="option399">X1 REPORT</option>
-                                    <option value="option400">X1 REPORT TIME</option>
-                                    <option value="option401">X2 REPORT</option>
-                                    <option value="option402">X2 REPORT TIME</option>
-                                    <option value="option403">EXIT SAFE DROP</option>
-                                    <option value="option404">X-READ REPORT</option>
-                                    <option value="option405">EXTRA LARGE TRANSACTION</option>
-                                    <option value="option406">Z1 REPORT</option>
-                                    <option value="option407">Z1 REPORT TIME</option>
-                                    <option value="option408">Z2 REPORT</option>
-                                    <option value="option409">Z2 REPORT TIME</option>
-
-                                    
-                                </select>
-                            </div>
-
-
-
-
-                        </div>
-
-
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                            <button type="button" class="btn btn-primary">Apply changes</button>
-                        </div>
-                    </div>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="datatable-footer">
+                    <div class="dataTables_info" id="DataTables_Table_0_info" role="status" aria-live="polite">Showing 1 to {{myRestarants.length}}</div>
+                    <div class="dataTables_paginate paging_simple_numbers" id="DataTables_Table_0_paginate"><a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">
+                        ←
+                    </a>
+                    <span>
+                        <a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0">
+                            {{paginationDashaboard}}
+                        </a>
+                    </span>
+                    <a class="paginate_button next" aria-controls="DataTables_Table_0" data-dt-idx="3" tabindex="0" id="DataTables_Table_0_next">
+                        →
+                    </a>
                 </div>
             </div>
 
@@ -1425,6 +797,10 @@
     </div>
 </div>
 </div>
+</div>
+</div>
+
+
 <!-- /main content -->
 
 </div>
