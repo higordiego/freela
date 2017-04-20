@@ -10,6 +10,7 @@
 					return $http.get(Config.api + 'business')
 				},
 				listOne: function(dados){
+					console.log(dados)
 					return $http.get(Config.api + 'business/'+ dados._id)
 				},
 				update: function(dados){

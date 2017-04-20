@@ -5,7 +5,7 @@ module.exports = (Organism) =>
 	const mod = req.body
 	const success = require('./ribossomos/success-200-json')(res)
 	const  error = require('./ribossomos/error-json')(res)
-	
+	console.log(req.body)
 	return Organism.update(query, mod)
 	.exec()
 	.then(success)

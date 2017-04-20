@@ -1,7 +1,7 @@
 module.exports =  (app) => {
 
   const create            = require( '../../../_organelles/organelle-create');
-  const list              = require( '../../../_organelles/organelle-find');
+  const list              = require( '../../../_organelles/organelle-find-populate-five');
   const listOne           = require( '../../../_organelles/organelle-findById');
   const update            = require( '../../../_organelles/organelle-update');
   const remove            = require( '../../../_organelles/organelle-remove');
@@ -30,8 +30,8 @@ module.exports =  (app) => {
   app.route('/')
   .post(validateUser(app))
 
-  // app.route('/employee')
-  //    .post(create(employeeModel))
+  app.route('/employee')
+  .post(create(employeeModel))
 
   app.route('/forgot/:email')
   .get(forgot(employeeModel))
@@ -45,7 +45,7 @@ module.exports =  (app) => {
 
   app.route(url)
   .post(validate.make, create(employeeModel))
-  .get(list(employeeModel))
+  .get(list(employeeModel)('business')('regions')('profiles')('departments')('stores'))
 
   app.route(url + '/:username/:password/:email')
   .delete(removeEmployee(employeeModel))

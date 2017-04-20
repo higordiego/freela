@@ -2,6 +2,7 @@ module.exports =  (app) => {
 
   const create        = require( '../../../_organelles/organelle-create');
   const populate      = require( '../../../_organelles/organelle-find-populate-one');
+  const populateOne   = require( '../../../_organelles/organelle-find-one-params-populate');
   const listOne       = require( '../../../_organelles/organelle-findById');
   const update        = require( '../../../_organelles/organelle-update');
   const remove        = require( '../../../_organelles/organelle-remove');
@@ -15,7 +16,7 @@ module.exports =  (app) => {
      .get(populate(businessModel)('company_id'))
 
   app.route(url +'/:id')
-    .get(validate.change, listOne(businessModel))
+    .get(validate.change, populateOne(businessModel)('company_id'))
     .put(validate.change, update(businessModel))
     .delete(validate.delete, remove(businessModel))
 

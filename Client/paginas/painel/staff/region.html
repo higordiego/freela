@@ -16,8 +16,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
+          <tr ng-repeat="(key, region) in staffUpdateBusiness.regions">
+            <td>{{key +1}}</td>
+            <td>{{region.name}}</td>
+            <td>{{region.business_id.name}}</td>
+            <td>{{region.description}}</td>
+            <td>{{region.status ? 'Active' : 'Disable'}}</td>
           </tr>
         </tbody>
       </table>
