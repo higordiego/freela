@@ -18,6 +18,28 @@
 				$scope.staffUpdateBusiness = staff
 			}
 
+			$scope.updateStaffDepartment = function(staff){
+				$scope.staffUpdateBusiness.departments.push(staff.addDepartment)
+				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+					delete $scope.staffs
+					$('#department').modal('hide');
+					$scope.staffList()
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+				})	
+			}
+
+			$scope.updateStaffStores = function(staff){
+				$scope.staffUpdateBusiness.stores.push(staff.addStores)
+				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+					delete $scope.staffs
+					$('#store').modal('hide');
+					$scope.staffList()
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+				})	
+			}
+
 			$scope.updateStaffRegions = function(staff){
 				$scope.staffUpdateBusiness.regions.push(staff.addRegions)
 				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
@@ -30,10 +52,11 @@
 			}
 
 			$scope.updateStaffBusiness = function(staff){
-				var recebe  = $scope.staffUpdateBusiness.business.filter(function(objeto){
-					return objeto == staff
-				})
-				if(!recebe){
+				console.log(staff)
+				// var recebe  = $scope.staffUpdateBusiness.business.filter(function(objeto){
+				// 	return objeto == staff
+				// })
+				// if(!recebe){
 					$scope.staffUpdateBusiness.business.push(staff.addbusiness)
 					StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
 						delete $scope.staffs
@@ -42,13 +65,13 @@
 						delete $scope.staff
 						delete $scope.staffUpdateBusiness
 					})	
-				}else{
+				// }else{
 					delete $scope.staffs
 					$('#business').modal('hide');
 					$scope.staffList()
 					delete $scope.staff
 					delete $scope.staffUpdateBusiness
-				}
+				// }
 			}
 
 			$scope.add = function(staff){
@@ -156,7 +179,7 @@
 			}
 
 			$scope.departmentList = function(){
-				BusinessFactory.list().then(function(response){
+				DepartmentFactory.list().then(function(response){
 					$scope.departments = response.data
 				})
 			}

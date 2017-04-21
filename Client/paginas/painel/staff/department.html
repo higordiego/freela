@@ -1,5 +1,6 @@
-<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" data-toggle="modal" data-target="#department">
-  <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
+<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" ng-disabled="!staffUpdateBusiness.firstName"
+data-toggle="modal" data-target="#department">
+<i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
 </button>
 <br/><br/>
 <div class="tab-content">
@@ -17,37 +18,53 @@
             <th>EVMSCode</th>
             <th>Flag</th>
             <th>Active</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+          <tr ng-repeat="(key, department) in staffUpdateBusiness.departments">
+            <td>{{key + 1}}</td>
+            <td> {{department.name}} </td>
+            <td> {{department.stores_id.name}} </td>
+            <td> {{department.device}} </td>
+            <td> {{department.description}} </td>
+            <td> {{department.register}} </td>
+            <td> {{department.EVMSCode}} </td>
+            <td> {{department.flag}} </td>
+            <td> {{department.active ? 'Active' : 'Disable'}} </td>
+            <td>
+              <a class="btn btn-danger btn-xs" ng-click="preDeleteBusiness(business)"
+              data-toggle="modal" data-target="#businessDelete">
+              <i class="fa fa-trash" aria-hidden="true" >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
-<div class="modal fade" id="department" role="dialog" style="margin-top: 150px">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">User Department </h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="form-group">
-          <label>Departmnet </label>
-            <select class="form-control" ng-model="employee.department" ng-options="department._id as department.name for department in departments">
-            </select>
+  <div class="modal fade" id="department" role="dialog" style="margin-top: 150px">
+    <form ng-submit="updateStaffDepartment(staff)" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">User Department </h4>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group">
+                <label>Departmnet </label>
+                <select class="form-control" ng-model="staff.addDepartment" ng-options="department._id as department.name for department in departments">
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
-      </div>
-    </div>
+    </form>
   </div>
-</div>

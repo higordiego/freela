@@ -18,26 +18,21 @@
 							<th>#</th>
 							<th>Name</th>
 							<th>Store</th>
-							<th>Devices</th>
 							<th>Description</th>
 							<th>Register </th>
 							<th>EVMSCode </th>
 							<th> Flag </th>
+							<th> Active </th>
 							<th class="text-center">Action</th>
-							</
 						</thead>
 						<tbody>
 							<tr ng-repeat="(key, depart) in departments">
-								<td>
-									<div class="radio">
-										<label>
-											<input type="radio" ng-model="department._id"
-											 ng-change="listOneDepartment(department)" >
-										</label>
-									</div>
+								<td> 
+									<input type="radio" name="optradio" ng-click="select(depart)">
 								</td>
 								<td> {{depart.name}} </td>
 								<td> {{depart.stores_id.name}} </td>
+								<td> {{depart.description}} </td>
 								<td> {{depart.description}} </td>
 								<td> {{depart.register}} </td>
 								<td> {{depart.EVMSCode}} </td>
@@ -58,6 +53,26 @@
 					</tr>
 				</tbody>
 			</table>
+		</div>
+		<div class="modal fade" id="deviceDelete" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Remove Device</h4>
+					</div>
+					<div class="modal-body">
+						<h3> Are you sure you want to delete the Device </h3>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-danger" ng-click="DeleteDevice()">Remove 
+							<i class="fa fa-trash" aria-hidden="true" >
+							</i>
+						</button>
+					</div>
+				</div>
+			</div>
 		</div>
 		<div class="modal fade" id="myModal2" role="dialog">
 			<div class="modal-dialog">
@@ -83,86 +98,130 @@
 </div>
 <div class="panel panel-default">
 	<div class="panel-heading"> Devices
-		<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" data-toggle="modal" data-target="#myModal">
+		<button ng-disabled="!devicesList.name"  class="btn btn-primary btn-sm btn-icon col-md-offset-11" data-toggle="modal" data-target="#device">
 			<i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
 		</button>
-
 	</div>
 
 	<div class="panel-body">
 		<div class="table-responsive table-hover pre-scrollable">
 			<table class="table">
 				<thead>
+					<th>#</th>
+					<th>Name</th>
+					<th>Store</th>
+					<th>Company</th>
+					<th>EVMSCode </th>
+					<th> Enable </th>
+					<th class="text-center">Action</th>
 				</thead>
 				<tbody>
-				</tbody>
-			</table>
+					<tr ng-repeat="(key, devices) in devicesList.devices">
+						<td> {{key + 1}}  </td>
+
+						<td> {{devices.name}}</td>
+						<td> {{devices.stores_id.name}} </td>
+						<td> {{devices.company_id.name}}</td>
+						<td> {{devices.EVMSCode}}</td>
+						<td> {{devices.enable ? 'Active' : 'Disable'}}</td>
+						<td class="text-center">
+							<a class="btn btn-danger btn-xs" ng-click="preDeleteDepartmentDevice(devices)"
+							data-toggle="modal" data-target="#deviceDelete">
+							<i class="fa fa-trash" aria-hidden="true" >
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="modal fade" id="myModal" role="dialog">
-	<form ng-submit="add(department)">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" ng-click="close()" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">{{title}}</h4>
-				</div>
-				<div class="modal-body" ng-init="storeList()">
-					<div class="form-group" ng-init="deviceList()">
+	<div class="modal fade" id="device" role="dialog" style="margin-top: 150px">
+		<form ng-submit="updateDepartment(department)" >
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">User Devices </h4>
+					</div>
+					<div class="modal-body">
 						<div class="row">
-							<div class="col-md-4">
-								<label>Name</label>
-								<input type="text" ng-model="department.name"  placeholder="Enter new departments" class="form-control">
+							<div class="form-group">
+								<label>Devices </label>
+								<select class="form-control" ng-model="department.addDepartment" ng-options="device._id as device.name for device in devices">
+								</select>
 							</div>
-							<div class="col-md-4">
-								<label>Stores</label>
-								<select ng-model="department.stores_id" 
-								ng-options="store._id as store.name for store in stores"
-								class="form-control" required="required">
-								<option value=""></option>
-							</select>
 						</div>
 					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-6">
-						<label>Description</label>
-						<input type="text" ng-model="department.description" placeholder="Enter new Description"  class="form-control">
-					</div>
-					<div class="col-md-6">
-						<label>Register</label>
-						<input type="text" ng-model="department.register" placeholder="Enter new Register"  class="form-control">
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
 					</div>
 				</div>
 			</div>
-			<div class="form-group">
-				<div class="row">
-					<div class="col-md-6">
-						<label>EVMSCode</label>
-						<input type="text" ng-model="department.EVMSCode" placeholder="Enter new EVMSCode"  class="form-control">
+		</form>
+	</div>
+	<div class="modal fade" id="myModal" role="dialog">
+		<form ng-submit="add(department)">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" ng-click="close()" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">{{title}}</h4>
 					</div>
-					<div class="col-md-4">
-						<label class="display-block">Flag</label>
-						<label class="radio-inline">
-							<input type="radio" required  ng-model="department.flag" name="optradio" value="true">Active
-						</label>
-						<label class="radio-inline">
-							<input type="radio" required ng-model="department.flag" name="optradio" value="false">Disable
-						</label>
+					<div class="modal-body" ng-init="storeList()">
+						<div class="form-group" ng-init="deviceList()">
+							<div class="row">
+								<div class="col-md-8">
+									<label>Name</label>
+									<input type="text" ng-model="department.name"  placeholder="Enter new departments" class="form-control">
+								</div>
+								<div class="col-md-4">
+									<label>Stores</label>
+									<select ng-model="department.stores_id" 
+									ng-options="store._id as store.name for store in stores"
+									class="form-control" required="required">
+									<option value=""></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label>Description</label>
+								<input type="text" ng-model="department.description" placeholder="Enter new Description"  class="form-control">
+							</div>
+							<div class="col-md-6">
+								<label>Register</label>
+								<input type="text" ng-model="department.register" placeholder="Enter new Register"  class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-6">
+								<label>EVMSCode</label>
+								<input type="text" ng-model="department.EVMSCode" placeholder="Enter new EVMSCode"  class="form-control">
+							</div>
+							<div class="col-md-4">
+								<label class="display-block">Flag</label>
+								<label class="radio-inline">
+									<input type="radio" required  ng-model="department.flag" name="optradio" value="true">Active
+								</label>
+								<label class="radio-inline">
+									<input type="radio" required ng-model="department.flag" name="optradio" value="false">Disable
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Close</button>
+						<button type="submit" ng-class="class">{{type}} 
+							<i class="icon-arrow-right14 position-right">
+							</i>
+						</button>
 					</div>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" ng-click="close()" data-dismiss="modal">Close</button>
-				<button type="submit" ng-class="class">{{type}} 
-					<i class="icon-arrow-right14 position-right">
-					</i>
-				</button>
-			</div>
+			</form>
 		</div>
-	</form>
-</div>
-</div> 
+	</div> 

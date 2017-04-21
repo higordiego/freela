@@ -1,5 +1,6 @@
-<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" data-toggle="modal" data-target="#store">
-  <i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
+<button class="btn btn-primary btn-sm btn-icon col-md-offset-11" ng-disabled="!staffUpdateBusiness.firstName"
+data-toggle="modal" data-target="#store">
+<i class="fa fa-plus-circle fa-1x" aria-hidden="true"></i>
 </button>
 <br/><br/>
 <div class="tab-content">
@@ -14,48 +15,51 @@
             <th>Business</th>
             <th>Regions</th>
             <th>Active</th>
+            <th> Action </th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
+          <tr ng-repeat="(key, stores) in staffUpdateBusiness.stores">
+            <td>{{key + 1}}</td>
+            <td> {{stores.name}} </td>
+            <td> {{stores.code}} </td>
+            <td> {{stores.business_id.name}} </td>
+            <td> {{stores.regions_id.name}} </td>
+            <td> {{stores.active ? 'Active' : 'Disable'}} </td>
+            <td>
+              <a class="btn btn-danger btn-xs" ng-click="preDeleteStaffStores(stores)"
+              data-toggle="modal" data-target="#businessDelete">
+              <i class="fa fa-trash" aria-hidden="true" >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
-<div class="modal fade" id="store" role="dialog" style="margin-top: 150px">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">User Stores</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="form-group">
-            <label>Buniess Group </label>
-            <select class="form-control" ng-model="employee.busines_id" ng-options="busines._id as busines.name for busines in business">
-            </select>
+  <div class="modal fade" id="store" role="dialog" style="margin-top: 150px">
+    <form ng-submit="updateStaffStores(staff)" >
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">User Stores</h4>
           </div>
-          <div class="form-group">
-            <label>Region </label>
-            <select class="form-control" ng-model="employee.regions" ng-options="region._id as region.name for region in regions">
-            </select>
+          <div class="modal-body" ng-init="storesList()">
+            <div class="row">
+              <div class="form-group">
+                <label>Store </label>
+                <select class="form-control" ng-model="staff.addStores" ng-options="store._id as store.name for store in stores">
+                </select>
+              </div>
+            </div>
           </div>
-          <div class="form-group">
-          <label>Store </label>
-            <select class="form-control" ng-model="employee.store" ng-options="store._id as store.name for store in stores">
-            </select>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
           </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
-      </div>
-    </div>
+    </form>
   </div>
-</div>

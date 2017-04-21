@@ -1,6 +1,6 @@
 module.exports =  (app) => {
   const create             = require( '../../../_organelles/organelle-create');
-  const populate           = require( '../../../_organelles/organelle-find-populate-two');
+  const populate           = require( '../../../_organelles/organelle-find-populate-departments');
   const listOne            = require( '../../../_organelles/organelle-findById');
   const listStore          = require( '../../../_organelles/organelle-findDpStore')
   const createDpDetails    = require( '../../../_organelles/organelle-createDpDetails')
@@ -16,7 +16,7 @@ module.exports =  (app) => {
   
   app.route(url)
       .post(validate.make, create(departmentsModel))
-      .get(populate(departmentsModel)('stores_id')('devices_id'))
+      .get(populate(departmentsModel)('stores_id')('devices'))
 
   app.route(url + '/details/')
       .post(validate.dpDetails, createDpDetails(departmentsModel))

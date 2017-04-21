@@ -19,9 +19,7 @@ const Departments = new Schema({
 	flag,
 	description,
 	EVMSCode,
-	device: [{
-		_id: devices_id
-	}],
+	devices: [{type: mongoose.Schema.ObjectId, ref: 'Devices'} ],
 	register,
 	created_at,
 	updated_at

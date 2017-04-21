@@ -28,22 +28,24 @@ module.exports  = (Organism)=> (PopulateOne) =>
 	const optionFor = {
 		path:     'departments',     
 		populate: { 
-			path:  'store_id',
+			path:  'stores_id',
 			model: 'Stores' 
 		}
 	}
 
 	const optionFive = {
 		path:     'stores',     
-		populate: { 
+		populate: [
+		{ 
 			path:  'business_id',
 			model: 'Businesss' 
 		},
-		Populate: {
+		{
 			path: 'regions_id',
 			model: 'Regions'
-		}
+		}]
 	}
+
 
 
 

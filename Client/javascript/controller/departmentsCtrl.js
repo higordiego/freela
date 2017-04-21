@@ -7,6 +7,8 @@
 			$scope.departments = [];
 			$scope.preDepartment = {};
 			$scope.devices = [];
+			$scope.devicesList = {};
+			$scope.aux = {};
 
 			$scope.close = function(){
 				$scope.title = "Form Create Department"
@@ -16,8 +18,66 @@
 				delete $scope.preDepartment
 			}
 
+			$scope.select = function(department){
+				$scope.devicesList = department;
+			}
+
 			$scope.close()
 
+
+			$scope.updateDepartment = function(department){
+				$scope.devicesList.devices.push(department.addDepartment)
+				DepartmentFactory.update($scope.devicesList).then(function(response){
+					delete $scope.department
+					delete $scope.preDepartment
+					$('#device').modal('hide');
+					$scope.departmentList()
+					delete $scope.devicesList;
+				})	
+			}
+
+
+			$scope.DeleteDevice = function(){
+				var recebe  = $scope.devicesList.devices.filter(function(objeto){
+					return objeto != $scope.aux
+				})
+				$scope.devicesList.devices = recebe.filter(function(objeto){ return objeto._id })
+				//$('#myModal').modal('hide')
+				DepartmentFactory.update($scope.devicesList).then(function(response){
+					$('#deviceDelete').modal('hide')
+					delete $scope.department
+					delete $scope.devicesList
+					delete $scope.preDepartment
+					$scope.departmentList();
+					$scope.close();
+				})
+			}
+
+			$scope.preDeleteDepartmentDevice = function(device){
+				$scope.aux = device;
+			}
+
+			$scope.updateDepartmentAdd = function(department){
+				var recebe  = $scope.devicesList.devices.filter(function(objeto){
+					return objeto == devices
+				})
+				if(!recebe){
+					$scope.devicesList.devices.push(department.addDepartment)
+					DepartmentFactory.update($scope.devicesList).then(function(response){
+						delete $scope.department
+						delete $scope.preDepartment
+						$('#device').modal('hide');
+						$scope.departmentList()
+						delete $scope.devicesList;
+					})	
+				}else{
+					delete $scope.department
+					delete $scope.preDepartment
+					$('#device').modal('hide');
+					$scope.departmentList()
+					delete $scope.devicesList;
+				}
+			}
 
 			$scope.add = function(department){
 
