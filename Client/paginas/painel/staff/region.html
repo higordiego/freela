@@ -13,6 +13,7 @@
             <th>Business Group</th>
             <th>Description</th>
             <th>Active</th>
+            <th> Action </th>
           </tr>
         </thead>
         <tbody>
@@ -22,37 +23,39 @@
             <td>{{region.business_id.name}}</td>
             <td>{{region.description}}</td>
             <td>{{region.status ? 'Active' : 'Disable'}}</td>
-          </tr>
-        </tbody>
-      </table>
+            <td>
+            <a class="btn btn-danger btn-xs" ng-click="preDeleteStaffRegions(business)"
+              data-toggle="modal" data-target="#businessDelete">
+              <i class="fa fa-trash" aria-hidden="true" >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
-</div>
-<div class="modal fade" id="region" role="dialog" style="margin-top: 150px">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">User Region </h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="form-group">
-            <label>Business Group </label>
-            <select class="form-control" ng-model="employee.busines_id" ng-options="busines._id as busines.name for busines in business">
-            </select>
+  <div class="modal fade" id="region" role="dialog" style="margin-top: 150px" ng-init="regionList()">
+    <form ng-submit="updateStaffRegions(staff)" >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">User Region </h4>
           </div>
-          <div class="form-group">
-            <label>Region </label>
-            <select class="form-control" ng-model="employee.regions" ng-options="Region._id as Region.name for Region in Regions">
-            </select>
+          <div class="modal-body">
+            <div class="row">
+              <div class="form-group">
+                <label>Region </label>
+                <select class="form-control" ng-model="staff.addRegions" ng-options="Region._id as Region.name for Region in regions">
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
           </div>
         </div>
       </div>
-       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" ng-class="class">{{type}} <i class="icon-arrow-right14 position-right"> </i></button>
-      </div>
-    </div>
+    </form>
   </div>
-</div>

@@ -9,25 +9,49 @@
 			$scope.preStaff	= {};
 			$scope.businessS = []
 			$scope.staffUpdateBusiness = {};
+			$scope.staffUpdateBusiness.regions = [];
+
+			$scope.aux = {};
 
 
 			$scope.select = function(staff){
 				$scope.staffUpdateBusiness = staff
 			}
 
-			$scope.updateStaffBusiness = function(staff){
-				
-				$scope.staffUpdateBusiness.business.push(staff.addbusiness)
-				console.log($scope.staffUpdateBusiness)
-				$('#business').modal('hide');
+			$scope.updateStaffRegions = function(staff){
+				$scope.staffUpdateBusiness.regions.push(staff.addRegions)
 				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
-					console.log(response)
-					$scope.staffList();
+					delete $scope.staffs
+					$('#regions').modal('hide');
+					$scope.staffList()
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+				})	
+			}
+
+			$scope.updateStaffBusiness = function(staff){
+				var recebe  = $scope.staffUpdateBusiness.business.filter(function(objeto){
+					return objeto == staff
 				})
+				if(!recebe){
+					$scope.staffUpdateBusiness.business.push(staff.addbusiness)
+					StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+						delete $scope.staffs
+						$('#business').modal('hide');
+						$scope.staffList()
+						delete $scope.staff
+						delete $scope.staffUpdateBusiness
+					})	
+				}else{
+					delete $scope.staffs
+					$('#business').modal('hide');
+					$scope.staffList()
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+				}
 			}
 
 			$scope.add = function(staff){
-				console.log(staff)
 				if($scope.type == 'Save'){
 					staff.password = staff.password1
 
@@ -48,6 +72,27 @@
 					})
 				}
 			}
+
+			$scope.preDeleteBusiness = function(business){
+				$scope.aux = business;
+			}
+
+			$scope.DeleteBusiness = function(){
+				var recebe  = $scope.staffUpdateBusiness.business.filter(function(objeto){
+					return objeto != $scope.aux
+				})
+				$scope.staffUpdateBusiness.business = recebe.filter(function(objeto){ return objeto._id })
+				//$('#myModal').modal('hide')
+				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+					$('#businessDelete').modal('hide')
+					delete $scope.staffs
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+					$scope.staffList();
+					$scope.close();
+				})
+			}
+
 
 
 			$scope.preDelete = function(staff){

@@ -13,7 +13,7 @@ module.exports  = (Organism)=> (PopulateOne) =>
 		path:     'regions',     
 		populate: { 
 			path:  'business_id',
-			model: 'Business'
+			model: 'Businesss'
 		}
 	}
 
@@ -21,7 +21,7 @@ module.exports  = (Organism)=> (PopulateOne) =>
 		path:     'regions',     
 		populate: {
 			path:  'business_id',
-			model: 'Business'
+			model: 'Businesss'
 		}
 	}
 
