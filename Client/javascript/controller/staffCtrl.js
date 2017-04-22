@@ -18,33 +18,131 @@
 				$scope.staffUpdateBusiness = staff
 			}
 
+			$scope.updateFactoryDepartment = function(objeto){
+				StaffFactory.update(objeto).then(function(response){
+					delete $scope.staffs
+					$scope.staffList()
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+				})	
+			}
+
 			$scope.updateStaffDepartment = function(staff){
-				$scope.staffUpdateBusiness.departments.push(staff.addDepartment)
-				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+				var recebe  = $scope.staffUpdateBusiness.departments.filter(function(objeto){
+					return objeto == staff
+				})
+				if(!recebe){
+					$scope.staffUpdateBusiness.departments.push(staff.addDepartment)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#department').modal('hide');
+				}else if(!$scope.staffUpdateBusiness.departments.length){
+					$scope.staffUpdateBusiness.departments.push(staff.addDepartment)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#department').modal('hide');
+				}else{
 					delete $scope.staffs
 					$('#department').modal('hide');
 					$scope.staffList()
 					delete $scope.staff
 					delete $scope.staffUpdateBusiness
-				})	
+				}
 			}
+
+			$scope.DeleteDepartment = function(){
+				var recebe  = $scope.staffUpdateBusiness.departments.filter(function(objeto){
+					return objeto != $scope.aux
+				})
+				$scope.staffUpdateBusiness.departments = recebe.filter(function(objeto){ return objeto._id })
+				$('#departmentDelete').modal('hide')
+				$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+				$scope.close();
+			}
+
+			$scope.deleteRegions = function(){
+				console.log($scope.aux)
+				var recebe  = $scope.staffUpdateBusiness.regions.filter(function(objeto){
+					return objeto != $scope.aux
+				})
+				$scope.staffUpdateBusiness.regions = recebe.filter(function(objeto){ return objeto._id })
+				$('#regionsDelete').modal('hide')
+				$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+				$scope.close();
+			}
+
+
 
 			$scope.updateStaffStores = function(staff){
 				$scope.staffUpdateBusiness.stores.push(staff.addStores)
-				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+				$('#store').modal('hide');
+				$scope.updateFactoryDepartment($scope.staffUpdateBusiness)				
+			}
+
+
+			$scope.updateStaffStores = function(staff){
+				var recebe  = $scope.staffUpdateBusiness.stores.filter(function(objeto){
+					return objeto == staff
+				})
+				if(!recebe){
+					$scope.staffUpdateBusiness.stores.push(staff.addStores)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#store').modal('hide');	
+				}else if(!$scope.staffUpdateBusiness.stores.length){
+					$scope.staffUpdateBusiness.stores.push(staff.addStores)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#store').modal('hide');	
+				}else{
 					delete $scope.staffs
 					$('#store').modal('hide');
 					$scope.staffList()
 					delete $scope.staff
 					delete $scope.staffUpdateBusiness
-				})	
+				}
 			}
 
+			$scope.deleteStores = function(){
+				var recebe  = $scope.staffUpdateBusiness.stores.filter(function(objeto){
+					return objeto != $scope.aux
+				})
+				$scope.staffUpdateBusiness.stores = recebe.filter(function(objeto){ return objeto._id })
+				$('#storesDelete').modal('hide')
+				$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+				$scope.close();
+			}
+
+
 			$scope.updateStaffRegions = function(staff){
-				$scope.staffUpdateBusiness.regions.push(staff.addRegions)
-				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
+				var recebe  = $scope.staffUpdateBusiness.regions.filter(function(objeto){
+					return objeto == staff
+				})
+				if(!recebe){
+					$scope.staffUpdateBusiness.regions.push(staff.addRegions)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#region').modal('hide');	
+				}else if(!$scope.staffUpdateBusiness.regions.length){
+					$scope.staffUpdateBusiness.regions.push(staff.addRegions)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#region').modal('hide');	
+				}else{
 					delete $scope.staffs
-					$('#regions').modal('hide');
+					$('#region').modal('hide');
+					$scope.staffList()
+					delete $scope.staff
+					delete $scope.staffUpdateBusiness
+				}
+				
+			}
+
+
+
+
+
+		
+
+
+			$scope.staffFactoryUpdate = function(objeto){
+				StaffFactory.update(objeto).then(function(response){
+					delete $scope.staffs
+					$('#business').modal('hide');
 					$scope.staffList()
 					delete $scope.staff
 					delete $scope.staffUpdateBusiness
@@ -52,32 +150,29 @@
 			}
 
 			$scope.updateStaffBusiness = function(staff){
-				console.log(staff)
-				// var recebe  = $scope.staffUpdateBusiness.business.filter(function(objeto){
-				// 	return objeto == staff
-				// })
-				// if(!recebe){
+				var recebe  = $scope.staffUpdateBusiness.business.filter(function(objeto){
+					return objeto == staff
+				})
+				if(!recebe){
 					$scope.staffUpdateBusiness.business.push(staff.addbusiness)
-					StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
-						delete $scope.staffs
-						$('#business').modal('hide');
-						$scope.staffList()
-						delete $scope.staff
-						delete $scope.staffUpdateBusiness
-					})	
-				// }else{
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#business').modal('hide');
+				}else if(!$scope.staffUpdateBusiness.business.length){
+					$scope.staffUpdateBusiness.business.push(staff.addbusiness)
+					$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+					$('#business').modal('hide');
+				}else{
 					delete $scope.staffs
 					$('#business').modal('hide');
 					$scope.staffList()
 					delete $scope.staff
 					delete $scope.staffUpdateBusiness
-				// }
+				}
 			}
 
 			$scope.add = function(staff){
 				if($scope.type == 'Save'){
 					staff.password = staff.password1
-
 					StaffFactory.create(staff).then(function(response){
 						delete $scope.staffs
 						$('#myModal').modal('hide');
@@ -105,18 +200,9 @@
 					return objeto != $scope.aux
 				})
 				$scope.staffUpdateBusiness.business = recebe.filter(function(objeto){ return objeto._id })
-				//$('#myModal').modal('hide')
-				StaffFactory.update($scope.staffUpdateBusiness).then(function(response){
-					$('#businessDelete').modal('hide')
-					delete $scope.staffs
-					delete $scope.staff
-					delete $scope.staffUpdateBusiness
-					$scope.staffList();
-					$scope.close();
-				})
+				$scope.updateFactoryDepartment($scope.staffUpdateBusiness)
+				$('#businessDelete').modal('hide')
 			}
-
-
 
 			$scope.preDelete = function(staff){
 				delete staff.password 

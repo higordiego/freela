@@ -24,16 +24,35 @@
 
 			$scope.close()
 
+			$scope.updateFactoryDepartment = function(devicesList){
 
-			$scope.updateDepartment = function(department){
-				$scope.devicesList.devices.push(department.addDepartment)
-				DepartmentFactory.update($scope.devicesList).then(function(response){
+				DepartmentFactory.update(devicesList).then(function(response){
 					delete $scope.department
 					delete $scope.preDepartment
 					$('#device').modal('hide');
 					$scope.departmentList()
 					delete $scope.devicesList;
-				})	
+				})
+			}
+
+			$scope.updateDepartment = function(department){
+				var recebe =  $scope.devicesList.devices.filter(function(objeto){
+					return objeto._id != department.addDepartment
+				})
+				if(!recebe){
+					$scope.devicesList.devices.push(department.addDepartment)
+					$scope.updateFactoryDepartment($scope.devicesList);
+				}else if(!$scope.devicesList.devices.length){
+					$scope.devicesList.devices.push(department.addDepartment)
+					$scope.updateFactoryDepartment($scope.devicesList);
+
+				}else{
+					delete $scope.department
+					delete $scope.preDepartment
+					$('#device').modal('hide');
+					$scope.departmentList()
+					delete $scope.devicesList;
+				}
 			}
 
 
